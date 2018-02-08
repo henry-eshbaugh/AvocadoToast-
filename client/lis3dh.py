@@ -9,7 +9,7 @@ class lis3dh:
     def __init__(self, i2c, dostartup=True):
         self.i2c = i2c
         if i2c is None:
-            raise FuckedTWIException("you shithead")
+            raise FuckedTWIException("୧༼ಠ益ಠ╭∩╮༽ you shithead".encode())
         if dostartup:
             self.startup()
 
