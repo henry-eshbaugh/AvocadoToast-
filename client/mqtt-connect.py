@@ -1,8 +1,9 @@
-import network
-import machine
 from umqtt.simple import MQTTClient
 from lis3dh import lis3dh, Sensitivity
 import ujson
+import math
+import network
+import machine
 
 if __name__ == '__main__':
     ap_if = network.WLAN(network.AP_IF)
@@ -23,8 +24,11 @@ if __name__ == '__main__':
         y = sensor.ready()
         z = sensor.readz()
         t = sensor.readtemp()
+        m = math.sqrt(x**2 + y**2 + z**2)
 
-        payload = ujson.dumps({'x' : x, 'y' : y, 'z' : z, 't' : t})
+        # accel data as x, y, z vector triad and scalar sc
+        # t for temperature
+        payload = ujson.dumps({'x' : x, 'y' : y, 'z' : z, 't' : t, 'sc' : m})
         client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
         sleep(1)
 
