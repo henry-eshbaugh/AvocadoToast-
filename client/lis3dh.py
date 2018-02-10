@@ -11,11 +11,11 @@ class FuckedTWIException(Exception):
     pass
 
 class lis3dh:
-    def __init__(self, i2c, dostartup=True, ranging=SENSE_2G):
+    def __init__(self, i2c, dostartup=True, ranging=Sensitivity.SENSE_2G):
         self.i2c = i2c
         self.ranging = ranging
         if i2c is None:
-            raise FuckedTWIException("୧༼ಠ益ಠ╭∩╮༽ you shithead".encode())
+            raise FuckedTWIException(u"୧༼ಠ益ಠ╭∩╮༽ you shithead".encode())
         if dostartup:
             self.startup()
 
@@ -49,6 +49,3 @@ class lis3dh:
         return self.read2(0x2C)
     def readtemp(self):
         return self.read2(0x0C)
-        
-
-
