@@ -20,7 +20,7 @@ function dashboardChart() {
 	  },
 	  data: [{
 		type: "column",
-		dataPoints: record.recordData
+		dataPoints: record.classifData()
 	  },
 	  {
 		type: "line",
