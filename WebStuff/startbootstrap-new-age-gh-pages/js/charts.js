@@ -1,28 +1,4 @@
 
-var record = {
-	//stored data
-	date		: new Date(2018, 2, 8),
-	recordData	: [ //Needs more records and time sorting out
-					{acc: 1, time: "13.04"},
-					{acc: 4, time: "13.05"},
-					],
-	//function methods
-	classifData	: function() { //return recordData classified into Light, Deep and REM 
-	},
-	totLight	: function() { //return total light sleep
-	},
-	totDeep		: function() { //return total deep sleep
-	},
-	totSleep	: function() { //return sum of light, deep, REM sleep
-	}
-	
-		
-}
-		
-function sleepClassifier() { 
-//Classify sleep acc records into Light, Deep and Rem
-}
-
 window.onload = function () {
 
 	dashboardChart()
@@ -44,41 +20,15 @@ function dashboardChart() {
 	  },
 	  data: [{
 		type: "column",
-		dataPoints: dps
+		dataPoints: record.recordData
 	  },
 	  {
 		type: "line",
-		dataPoints: (dps)
+		dataPoints: record.recordData
 	  }]
 	});
-
-	var xVal = 0;
-	var yVal = 100;
-	var updateInterval = 1000;
-	var dataLength = 20; // number of dataPoints visible at any point
-
-	var updateChart = function (count) {
-
-	  count = count || 1;
-
-	  for (var j = 0; j < count; j++) {
-		yVal = yVal +  Math.round(5 + Math.random() *(-5-5));
-		dps.push({
-		  x: xVal,
-		  y: yVal
-		});
-		xVal++;
-	  }
-
-	  if (dps.length > dataLength) {
-		dps.shift();
-	  }
-
-	  chart.render();
-	};
-
-	updateChart(dataLength);
-	setInterval(function(){updateChart()}, updateInterval);
+	chart.render();
+	
 }
 function sleepBreakdown() {
 		var chart = new CanvasJS.Chart("chartContainer2", {
