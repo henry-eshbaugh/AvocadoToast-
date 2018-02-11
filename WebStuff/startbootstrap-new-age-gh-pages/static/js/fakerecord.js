@@ -993,20 +993,8 @@ var record = {
 	
 }
 
-function readTextFile(file, callback) {
-    var rawFile = new XMLHttpRequest();
-    rawFile.overrideMimeType("text/plain");
-    rawFile.open("GET", file, true);
-    rawFile.onreadystatechange = function() {
-        if (rawFile.readyState === 4 && rawFile.status == "200") {
-            callback(rawFile.responseText);
-        }
-    }
-    rawFile.send(null);
-}
-
-//usage:
-readTextFile("js/rawex.txt", function(text){
-    var data = JSON.parse(text);
-    console.log(data);
+jQuery(document).ready(function($){	
+$.getJSON("127.0.0.1:5000/json", function(data) { 
+	console.log(data);
+});
 });
