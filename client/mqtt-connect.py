@@ -4,6 +4,7 @@ import ujson
 import math
 import network
 import machine
+import utime
 
 if __name__ == '__main__':
     ap_if = network.WLAN(network.AP_IF)
@@ -12,6 +13,8 @@ if __name__ == '__main__':
     sta_if = network.WLAN(network.STA_IF)
     sta_if.active(True)
     sta_if.connect("EEERover", "exhibition")
+    while not sta_if.isconnected():
+        sleep(1)
     
     client = MQTTClient(machine.unique_id(), "192.168.0.10")
     client.connect()
