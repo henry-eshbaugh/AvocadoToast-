@@ -5,8 +5,7 @@ function sleepClassifier() {
 var record = {
 	//stored data
 	date		: new Date(2018, 2, 8),
-	recordData	: [ //Needs more records and time sorting out
-					{x: 1, y: 5.38108801203645},
+	recordData	: [	{x: 1, y: 5.38108801203645},
 					{x: 2, y: 5.13617061162582},
 					{x: 3, y: 5.09662662304338},
 					{x: 4, y: 5.30516164157148},
@@ -993,3 +992,21 @@ var record = {
 	}
 	
 }
+
+function readTextFile(file, callback) {
+    var rawFile = new XMLHttpRequest();
+    rawFile.overrideMimeType("text/plain");
+    rawFile.open("GET", file, true);
+    rawFile.onreadystatechange = function() {
+        if (rawFile.readyState === 4 && rawFile.status == "200") {
+            callback(rawFile.responseText);
+        }
+    }
+    rawFile.send(null);
+}
+
+//usage:
+readTextFile("js/rawex.txt", function(text){
+    var data = JSON.parse(text);
+    console.log(data);
+});
