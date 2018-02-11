@@ -12,4 +12,4 @@ sta_if.connect("EEERover", "exhibition")
 client = MQTTClient(machine.unique_id(), "192.168.0.10")
 client.connect()
 
-# client.publish("esys/avocadotoast/test", bytes("frukky frink", "utf-8"))
+client.publish("esys/avocadotoast/test", bytes("frukky frink", "utf-8"))
