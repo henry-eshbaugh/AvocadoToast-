@@ -14,7 +14,7 @@ if __name__ == '__main__':
     sta_if.active(True)
     sta_if.connect("EEERover", "exhibition")
     while not sta_if.isconnected():
-        sleep(1)
+        utime.sleep(1)
     
     client = MQTTClient(machine.unique_id(), "192.168.0.10")
     client.connect()
@@ -33,7 +33,7 @@ if __name__ == '__main__':
         # t for temperature
         payload = ujson.dumps({'x' : x, 'y' : y, 'z' : z, 't' : t, 'sc' : m})
         client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
-        sleep(1)
+        utime.sleep(1)
 
 
 # client.publish("esys/avocadotoast/test", bytes("frukky frink", "utf-8"))
