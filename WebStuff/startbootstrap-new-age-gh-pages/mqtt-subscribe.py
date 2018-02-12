@@ -1,16 +1,14 @@
 import paho.mqtt.client as mqtt
 from threading import Thread
 import json
-from tinydb import TinyDB, Query
-
-db = TinyDB("db.json")
 
 def on_connect(client, userdata, flags, rc):
     print("Connected with result code " + str(rc))
     client.subscribe("esys/avocadotoast/#")
 
 def on_message(client, userdata, msg):
-    db.insert(json.loads(msg))
+    with open('db.json', 'a') as f:
+        f.write(msg + '\n')
 
 client = mqtt.Client()
 client.on_connect = on_connect
