@@ -39,7 +39,7 @@ var record = {
 }
 
 function UpdateJSON(){
-  $.getJSON("/json.json", function(data) {
+  $.getJSON("/test.json", function(data) {
       for(i=0; i<data.length; i++){
         console.log(data.length);
         console.log(record.recordData);
@@ -49,4 +49,5 @@ function UpdateJSON(){
     console.log(record.recordData);
     });
     //Potential time issues
+    
 }
