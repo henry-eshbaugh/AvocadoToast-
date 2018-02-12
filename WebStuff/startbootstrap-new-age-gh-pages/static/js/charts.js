@@ -4,34 +4,37 @@ window.onload = function () {
 	dashboardChart()
 	sleepBreakdown()
 	trendsChart()
-	
+
 }
 
 function dashboardChart() {
-	
+
 
 	var dps = []; // dataPoints
 	var chart = new CanvasJS.Chart("chartContainer", {
-	  title :{
-		text: "Sleep data"
-	  },
-	  axisY: {
-		includeZero: false
-	  },
-	  data: [{
-		type: "column",
-		dataPoints: record.classifData()
-	  },
-	  {
-		type: "line",
-		dataPoints: record.recordData
-	  }]
+		backgroundColor: "transparent",
+		// title :{
+		// 	text: "Sleep data",
+		// 	padding : 5,
+		// },
+		axisY: {
+			includeZero: false
+		},
+		data: [{
+			type: "column",
+			dataPoints: record.classifData()
+		},
+		{
+			type: "line",
+			dataPoints: record.recordData
+		}]
 	});
 	chart.render();
-	
+
 }
 function sleepBreakdown() {
 		var chart = new CanvasJS.Chart("chartContainer2", {
+			backgroundColor: "transparent",
 	  title :{
 		text: "Sleep breakdown"
 	  },
@@ -58,12 +61,13 @@ function sleepBreakdown() {
 	});
 
 
-	  chart.render(); 
+	  chart.render();
 }
-	
+
 function trendsChart() {
-		
+
 	var chart = new CanvasJS.Chart("chartContainer3", {
+		backgroundColor: "transparent",
 	  title :{
 		text: "Trends"
 	  },
@@ -119,6 +123,5 @@ function trendsChart() {
 	});
 
 
-	  chart.render(); 
+	  chart.render();
 }
-	
