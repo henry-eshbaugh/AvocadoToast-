@@ -10,7 +10,7 @@ console.log(JSONPoints);
    
 var record2 = {
 	//stored data
-	recordData	: JSON.parse(JSONPoints),
+	recordData()	: function () {JSON.parse(JSONPoints);},
 	//function methods
 	classifData	: function() { //return recordData classified into Light, Deep and REM 
 				var newList = [];
