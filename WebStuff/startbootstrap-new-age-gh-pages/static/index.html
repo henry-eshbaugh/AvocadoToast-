@@ -89,15 +89,19 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
+            <h2 class="section-heading" style = "margin-bottom:30px">
+                <font color='white'> Try the demo! </font>
+            </h2>
             <!-- start of dashboard code -->
             <script type="text/javascript">
-               function toggleElement(id) {
+                document.getElementById('Dashboard').style.display = 'none';
+                function toggleElement(id) {
                    var e = document.getElementById(id);
-                   if(e.style.display == 'block')
-                      e.style.display = 'none';
-                   else
+                   if(e.style.display == 'none')
                       e.style.display = 'block';
-               }
+                   else
+                      e.style.display = 'none';
+                }
             </script>
 
             <div class="header-content mx-auto" style="margin-bottom:30px">
@@ -120,7 +124,7 @@
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
             <p>Our app is available on any mobile device! Download now to get started!</p>
             <div class="badges">
-              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.avocado.avocado.AOVNCCGWMRTUOWL&hl=en"><img src="img/google-play-badge.svg" alt=""></a>
+              <a class="badge-link" href=#><img src="img/google-play-badge.svg" alt=""></a>
               <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
             </div>
           </div>
@@ -191,7 +195,7 @@
       </div>
     </section>
 <!-- meet the team-->
-    <section class="cta">
+    <section class="cta" id="contact">
       <div class="cta-content">
         <div class="container">
           <h2>Meet the team. <br> <!--<br>Start building.</h2>-->
@@ -201,24 +205,24 @@
       <div class="overlay"></div>
     </section>
 <!-- contact us -->
-    <section class="contact bg-primary" id="contact">
+    <section class="contact bg-primary">
       <div class="container">
         <h2>Follow us!</h2>
           <!--<i class="fa fa-heart"></i>-->
 
         <ul class="list-inline list-social">
           <li class="list-inline-item social-twitter">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li class="list-inline-item social-facebook">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item social-google-plus">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -233,13 +237,13 @@
         <p>&copy; AvocadoToast 2018. All Rights Reserved.</p>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy</a>
+            <a href=#>Privacy</a>
           </li>
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms</a>
+            <a href=#>Terms</a>
           </li>
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FAQ</a>
+            <a href=#>FAQ</a>
           </li>
         </ul>
       </div>

@@ -18,7 +18,13 @@ function dashboardChart() {
 		// 	padding : 5,
 		// },
 		axisY: {
-			includeZero: false
+			includeZero: false,
+			title : "Acceleration m/s²",
+			titleFontSize : 15
+		},
+		axisX : {
+			title : "Time",
+			titleFontSize : 15
 		},
 		data: [{
 			type: "column",
@@ -35,10 +41,11 @@ function dashboardChart() {
 function sleepBreakdown() {
 		var chart = new CanvasJS.Chart("chartContainer2", {
 			backgroundColor: "transparent",
-	  title :{
-		text: "Sleep breakdown"
-	  },
 
+	  axisY : {
+		title : "Breakdown of total sleep %",
+		titleFontSize : 15
+	},
 	  data: [{
 		type: "stackedBar100",
 		dataPoints: [
@@ -63,16 +70,21 @@ function sleepBreakdown() {
 
 	  chart.render();
 }
-
 function trendsChart() {
 
 	var chart = new CanvasJS.Chart("chartContainer3", {
 		backgroundColor: "transparent",
-	  title :{
-		text: "Trends"
-	  },
+	  // title :{
+		// text: "Trends"
+	  // },
 	  axisY: {
-		includeZero: false
+		title : "Hours of sleep",
+		includeZero: false,
+		titleFontSize : 15
+	  },
+	  axisX: {
+		title : "Date Month/Day/Year",
+		titleFontSize : 15
 	  },
 	  data: [{
 		type: "stackedColumn",

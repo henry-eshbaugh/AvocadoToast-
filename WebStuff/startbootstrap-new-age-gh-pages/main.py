@@ -34,3 +34,6 @@ def file():
 	js = jsonify(data)
 	js.status_code = 200
 	return js
+
+if __name__ == '__main__':
+	app.run(ssl_context='adhoc')
