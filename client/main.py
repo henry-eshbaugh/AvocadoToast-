@@ -27,6 +27,8 @@ def mqtt_connect(client):
 client = MQTTClient("avocadotoast", "192.168.0.10")
 mqtt_connect(client)
 
+queue = []
+
 while True:
 #    rawx = sensor.read_raw_x()
 #    rawy = sensor.read_raw_y()
@@ -42,12 +44,14 @@ while True:
 #    data = ujson.dumps({"time": dateTime, "accelData": {'x': x, "y": y, "z": z, 'norm': norm, 'rawx': rawx, 'rawy': rawy, 'rawz': rawz}, "temperatureData": temperature})
     payload = ujson.dumps({"time": dateTime, "accelData": {"x": x, "y": y, "z": z, "norm": norm}, "temperature": temperature})
     print(payload)
-    client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
+
+    if not sta_if.isconnected():
+        # todo: more persistent storage in a place with higher capacity
+        queue.append(payload)
+    
+    else:
+        while len(queue) != 0:
+            client.publish('esys/avocadotoast/sensor', bytes(queue.pop(0), 'utf-8'))
+        client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
+    
     utime.sleep(1)
-
-
-
-
-
-
-
