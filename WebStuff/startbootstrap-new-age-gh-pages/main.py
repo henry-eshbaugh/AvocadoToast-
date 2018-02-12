@@ -1,4 +1,4 @@
-from flask import Flask
+from flask import Flask, render_template
 from flask import jsonify
 from flask import Response
 app = Flask(__name__)
@@ -6,8 +6,13 @@ app = Flask(__name__)
 @app.route("/")
 @app.route('/index')
 def index():
-	with open('dashboard.html') as f:
+	with open('static/index.html') as f:
 		content = f.read()
+	return content
+@app.route('/dash')
+def dash():
+	with open('dashboard.html') as g:
+		content = g.read()
 	return content
 
 @app.route('/json', methods = ['GET'])
