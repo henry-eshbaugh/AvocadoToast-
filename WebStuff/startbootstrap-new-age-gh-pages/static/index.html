@@ -2,7 +2,10 @@
 <html lang="en">
 
   <head>
-
+    <!--Dashboard code start -->
+    <script type="text/javascript" sr="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <!-- dashboard code end  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
@@ -11,7 +14,7 @@
     <!-- <title>New Age - Start Bootstrap Theme</title> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" >
 
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
@@ -86,6 +89,33 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
+            <!-- start of dashboard code -->
+            <script type="text/javascript">
+               function toggleElement(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'block')
+                      e.style.display = 'none';
+                   else
+                      e.style.display = 'block';
+               }
+            </script>
+
+            <div class="header-content mx-auto">
+              <button type="button" onclick="toggleElement('Dashboard')" class="btn btn-outline btn-xl js-scroll-trigger">Dashboard</button>
+            </div>
+            <div id="Dashboard" style="display:" ''>
+              <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+              <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div>
+            </div>
+
+            <div class="header-content mx-auto">
+              <button type="button" onclick="toggleElement('Trends')" class="btn btn-outline btn-xl js-scroll-trigger">Dashboard</button>
+            </div>
+            <div id="Trends" style="display:" ''>
+              <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+            </div>
+            <!-- end of dashboard code -->
+
             <h2 class="section-heading">Discover what all the buzz is about!</h2>
             <p>Our app is available on any mobile device! Download now to get started!</p>
             <div class="badges">
@@ -215,14 +245,22 @@
     </footer>
 
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CanvasJS Plugin -->
+    <script src="js/jquery.canvasjs.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+
+    <!-- Chart JS file -->
+	<script src="js/fakerecord.js"></script>
+
+	<script src="js/charts.js"></script>
 
   </body>
 
