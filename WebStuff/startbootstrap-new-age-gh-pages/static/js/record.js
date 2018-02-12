@@ -1,6 +1,6 @@
 
    
-var record2 = {
+var record = {
 	//stored data
 	recordData	: JSON.parse(rawex);
 	//function methods
