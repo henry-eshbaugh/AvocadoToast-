@@ -1,6 +1,6 @@
 
 window.onload = function () {
-	UpdateJSON()
+
 	dashboardChart()
 	sleepBreakdown()
 	trendsChart()
@@ -32,9 +32,12 @@ function dashboardChart() {
 		},
 		{
 			type: "line",
+
 			dataPoints: record.recordData
 		}]
 	});
+	UpdateJSON();
+	console.log(record.recordData);
 	chart.render();
 
 }
