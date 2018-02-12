@@ -94,7 +94,12 @@
             </h2>
             <!-- start of dashboard code -->
             <script type="text/javascript">
-                document.getElementById('Dashboard').style.display = 'none';
+
+                function hideElement(id) {
+                    var e = document.getElementById(id);
+                    e.style.display = 'none';
+                }
+
                 function toggleElement(id) {
                    var e = document.getElementById(id);
                    if(e.style.display == 'none')
@@ -248,7 +253,6 @@
         </ul>
       </div>
     </footer>
-
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
