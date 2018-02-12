@@ -1,8 +1,16 @@
+var JSONPoints = [];
+$.getJSON("/json", function(data) {  
+    $.each(data, function(){
+        JSONPoints.push(data);
+    });
+}); 
+
+console.log(JSONPoints);
 
    
-var record = {
+var record2 = {
 	//stored data
-	recordData	: JSON.parse(rawex);
+	recordData	: JSON.parse(JSONPoints),
 	//function methods
 	classifData	: function() { //return recordData classified into Light, Deep and REM 
 				var newList = [];
