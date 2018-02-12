@@ -15,7 +15,7 @@ def dash():
 		content = g.read()
 	return content
 
-@app.route('/json', methods = ['GET'])
+@app.route('/json.json', methods = ['GET'])
 def file():
 	data = [	{'x': 1, 'y': 5.38108801203645},
 			{'x': 2, 'y': 5.13617061162582},
@@ -34,4 +34,3 @@ def file():
 	js = jsonify(data)
 	js.status_code = 200
 	return js
-
