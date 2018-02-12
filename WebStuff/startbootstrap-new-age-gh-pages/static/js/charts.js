@@ -1,6 +1,6 @@
 
 window.onload = function () {
-
+	UpdateJSON()
 	dashboardChart()
 	sleepBreakdown()
 	trendsChart()
