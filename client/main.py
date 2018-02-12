@@ -8,14 +8,6 @@ i2c = I2C(scl=Pin(5), sda=Pin(4), freq=10000)
 
 sensor = lis3dh.lis3dh(i2c)
 
-def test():
-    val = i2c.readfrom_mem(0x18, 0x28, 2)
-    print("Byte 0:", val[0]) 
-    print("Byte 1:", val[1])
-
-    print("Byte 0 Masked:", val[0] & 0b00001111) 
-    print("Byte 1 Masked:", val[1] & 0b00001111)
-
 while True:
 #    rawx = sensor.read_raw_x()
 #    rawy = sensor.read_raw_y()
