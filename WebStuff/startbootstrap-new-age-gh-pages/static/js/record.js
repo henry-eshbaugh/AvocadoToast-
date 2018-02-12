@@ -1,11 +1,21 @@
-var JSONPoints = [];
-$.getJSON('/json.json', function(data) {
-    $.each(data, function(){
-        JSONPoints.push(data);
-    });
-});
 
-console.log(JSONPoints);
+// var JSONPoints = [];
+//
+// $.getJSON("/json.json", function(data) {
+//     $.each(data, function(){
+//       console.log(data);
+//       JSONPoints.push(data);
+//     });
+// });
+
+$.getJSON("/json.json", function(data) {
+
+      var JSONPoints = data;
+      console.log(JSONPoints);
+    });
+    //Potential time issues
+
+
 
 
 // var record2 = {

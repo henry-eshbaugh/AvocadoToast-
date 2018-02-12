@@ -1,4 +1,4 @@
-function sleepClassifier() { 
+function sleepClassifier() {
 //Classify sleep acc records into Light, Deep and Rem
 }
 
@@ -968,21 +968,21 @@ var record = {
 
 					],
 	//function methods
-	classifData	: function() { //return recordData classified into Light, Deep and REM 
+	classifData	: function() { //return recordData classified into Light, Deep and REM
 				var newList = [];
 				for (i = 0; i < this.recordData.length; i++){
 						if (this.recordData[i].y < 4){
 							newList.push({x: this.recordData[i].x, y: 3});
-						} 
+						}
 						else if (this.recordData[i].y >= 3 && this.recordData[i].y < 5){
 							newList.push({x: this.recordData[i].x, y: 4});
-						} 
+						}
 						else if (this.recordData[i].y >=5){
 							newList.push({x: this.recordData[i].x, y: 5});
-						} 
+						}
 				}
 				return newList;
-		
+
 	},
 	totLight	: function() { //return total light sleep
 	},
@@ -990,11 +990,5 @@ var record = {
 	},
 	totSleep	: function() { //return sum of light, deep, REM sleep
 	}
-	
-}
 
-jQuery(document).ready(function($){	
-$.getJSON("127.0.0.1:5000/json", function(data) { 
-	console.log(data);
-});
-});
+}
