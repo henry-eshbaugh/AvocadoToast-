@@ -1,5 +1,6 @@
 from flask import Flask, render_template
 from flask import jsonify
+from flask import json
 from flask import Response
 app = Flask(__name__)
 # app.static_folder = 'static'
@@ -18,11 +19,31 @@ def dash():
 
 @app.route('/db', methods = ['GET'])
 def file():
-    with open('db.json', 'r') as f:
-        data = f.read()
-    js = jsonify(data)
-    js.status_code = 200
-    return js
+    with open('db.json') as f:
+        data = f.readlines()
+    js = list(map(json.loads, data))
+    return jsonify(js)
+# def read_file(filename, charset='utf-8'):
+#     with open('db.json', 'r') as f:
+#         return f.readlines().decode('utf-8')
+
+# def read_file(filename, charset='utf-8'):
+#     with open('db.json', 'r') as f:
+#         return f.read().decode(charset)
+# def summary():
+# 	with open('db.json') as f:
+# 		data = f.readlines()
+# 		response = app.response_class(
+# 	        response=json.dumps(data),
+# 	        status=200,
+# 	        mimetype='application/json'
+# 	    )
+# 	return response
+# def file():
+#     with open('db.json') as db_file:
+#         data = json.load(db_file)
+# 	js = jsonify(data)
+# 	return data
 
 @app.route('/json.json', methods = ['GET'])
 def file2():

@@ -39,7 +39,8 @@ var record = {
 }
 
 function UpdateJSON(){
-  $.getJSON("/json.json", function(data) {
+  $.getJSON("/db", function(data) {
+		var parsed = JSON.parse(data);
 	// data = [	{'x': 1, 'y': 5.38108801203645}, //for testing scope
 	// 					{'x': 2, 'y': 5.13617061162582},
 	// 					{'x': 3, 'y': 5.09662662304338},
@@ -54,11 +55,11 @@ function UpdateJSON(){
 	// 					{'x': 12, 'y': 5.02512693318836},
 	// 					{'x': 13, 'y': 5.00682427912703},
 	// 					{'x': 14, 'y': 5.78608623851813}];
-      for(i=0; i<data.length; i++){
-        console.log(data.length);
+      for(i=0; i<parsed.length; i++){
+        console.log(parsed.length);
         console.log(record.recordData);
       // record.recordData.push({x: data[i].accelData.norm.x, y: data[i].time.y}); //change to new json format
-			record.recordData.push({x: data[i].x, y: data[i].y}); //change to new json format
+			record.recordData.push({x: parsed[i].acccelData.norm, y: parsed[i].time}); //change to new json format
 
     // }
     console.log("JSON updated");
