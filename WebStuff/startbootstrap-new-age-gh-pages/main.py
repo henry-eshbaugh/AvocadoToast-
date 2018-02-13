@@ -7,8 +7,6 @@ app.static_folder = 'static'
 @app.route("/")
 @app.route('/index')
 def index():
-	# with open('static/index.html') as f:
-	# 	content = f.read()
 	return render_template('index.html')
 @app.route('/dash')
 def dash():
