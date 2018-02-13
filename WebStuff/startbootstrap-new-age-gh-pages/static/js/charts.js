@@ -36,7 +36,7 @@ function dashboardChart() {
 			dataPoints: record.recordData
 		}]
 	});
-	UpdateJSON();
+	NewUpdateJSON(record.recordData);
 	console.log(record.recordData);
 	chart.render();
 
