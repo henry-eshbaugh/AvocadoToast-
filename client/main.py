@@ -7,27 +7,21 @@ import ujson
 import network
 
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=10000)
-
 sensor = lis3dh.lis3dh(i2c)
 
-def mqtt_connect(client):
-    ap_if = network.WLAN(network.AP_IF)
-    ap_if.active(False)
+db = '/data/db.json'
 
-    sta_if = network.WLAN(network.STA_IF)
-    sta_if.active(True)
-    sta_if.connect("EEERover", "exhibition")
-    while not sta_if.isconnected():
-        utime.sleep(1)
+ap_if = network.WLAN(network.AP_IF)
+ap_if.active(False)
 
-    #client = MQTTClient("avocadotoast", "192.168.0.10")
-    client.connect()
+sta_if = network.WLAN(network.STA_IF)
+sta_if.active(True)
+sta_if.connect("EEERover", "exhibition")
+while not sta_if.isconnected():
+    utime.sleep(1)
 
-#if __name__ == '__main__':
 client = MQTTClient("avocadotoast", "192.168.0.10")
-mqtt_connect(client)
-
-queue = []
+client.connect()
 
 while True:
 #    rawx = sensor.read_raw_x()
@@ -46,12 +40,16 @@ while True:
     print(payload)
 
     if not sta_if.isconnected():
-        # todo: more persistent storage in a place with higher capacity
-        queue.append(payload)
+        print("Not connected; acquiring db.json...")
+        with open(db, 'a') as f:
+            f.write(payload + '\n')
     
     else:
-        while len(queue) != 0:
-            client.publish('esys/avocadotoast/sensor', bytes(queue.pop(0), 'utf-8'))
+        print("connected: maybe dumping db.json...")
+        with open(db, 'r') as f:
+            payloads = f.readlines()
+        while len(payloads) != 0:
+            client.publish('esys/avocadotoast/sensor', bytes(payloads.pop(0), 'utf-8'))
         client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
     
     utime.sleep(1)
