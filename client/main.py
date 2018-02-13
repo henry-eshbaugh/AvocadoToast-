@@ -48,6 +48,8 @@ while True:
         print("connected: maybe dumping db.json...")
         with open(db, 'r') as f:
             payloads = f.readlines()
+        with open(db, 'w') as f:
+            pass # blank the file
         while len(payloads) != 0:
             client.publish('esys/avocadotoast/sensor', bytes(payloads.pop(0), 'utf-8'))
         client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
