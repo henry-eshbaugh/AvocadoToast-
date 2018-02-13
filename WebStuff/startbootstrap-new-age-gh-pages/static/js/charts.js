@@ -36,8 +36,8 @@ function dashboardChart() {
 			dataPoints: record.recordData
 		}]
 	});
-//	UpdateJSON();
-//	console.log(record.recordData);
+	UpdateJSON();
+	console.log(record.recordData);
 	chart.render();
 
 }
