@@ -4,7 +4,8 @@
   <head>
     <!--Dashboard code start -->
     <script type="text/javascript" sr="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/jquery/jquery.min.js') }}"></script>
     <!-- dashboard code end  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -15,20 +16,30 @@
 
     <!-- Bootstrap core CSS -->
 
-    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" >
-    <!-- <link rel="stylesheet" href="{{ url_for('static', filename = vendor/bootstrap/css/bootstrap.min.css') }}" > -->
+    <!-- <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" > -->
     <!-- Custom fonts for this template -->
-    <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
-    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css"> -->
+    <!-- <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css"> -->
+    <!-- <link href="css/new-age.min.css" rel="stylesheet"> -->
 
     <!-- Plugin CSS -->
-    <link rel="stylesheet" href="device-mockups/device-mockups.min.css">
+    <!-- <link rel="stylesheet" href="device-mockups/device-mockups.min.css"> -->
 
     <!-- Custom styles for this template -->
-    <link href="css/new-age.min.css" rel="stylesheet">
+
+    <!-- redone links for Flask -->
+
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'vendor/bootstrap/css/bootstrap.min.css') }}" />
+    <!-- Custom fonts for this template -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'vendor/font-awesome/css/font-awesome.min.css') }}" >
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'vendor/simple-line-icons/css/simple-line-icons.css') }}" >
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'css/new-age.min.css') }}" >
+    <!-- Plugin CSS -->
+    <link type="text/css" rel="stylesheet" href="{{ url_for('static', filename = 'device-mockups/device-mockups.min.css') }}" >
+    <!-- end of redone links for Flask -->
 
   </head>
 
@@ -73,7 +84,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -132,8 +143,8 @@
             </h2>
             <p><font color = "white"> Our app is available on any mobile device! Download now to get started! </font color></p>
             <div class="badges">
-              <a class="badge-link" href=#><img src="img/google-play-badge.svg" alt=""></a>
-              <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
+              <a class="badge-link" href=#><img src="{{url_for('static', filename = 'img/google-play-badge.svg') }}" alt=""></a>
+              <a class="badge-link" href="#"><img src="{{url_for('static', filename = 'img/app-store-badge.svg') }}" alt=""></a>
             </div>
           </div>
         </div>
@@ -154,7 +165,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="img/demo-screen-1.jpg" class="img-fluid" alt="">
+                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -258,22 +269,22 @@
     </footer>
     <!-- Bootstrap core JavaScript -->
     <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
-    <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- CanvasJS Plugin -->
-    <script src="js/jquery.canvasjs.min.js"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename =  'js/jquery.canvasjs.min.js') }}"></script>
 
     <!-- Plugin JavaScript -->
-    <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
-
+    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for this template -->
-    <script src="js/new-age.min.js"></script>
-
+    <!-- <script src="js/new-age.min.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename =  'js/new-age.min.js') }}"></script>
     <!-- Chart JS file -->
-	<script src="js/fakerecord.js"></script>
-
-	<script src="js/charts.js"></script>
-
+	<!-- <script src="js/fakerecord.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename =  'js/fakerecord.js') }}"></script>
+	<!-- <script src="js/charts.js"></script> -->
+    <script type="text/javascript" src="{{ url_for('static', filename =  'js/charts.js') }}"></script>
   </body>
 
 </html>

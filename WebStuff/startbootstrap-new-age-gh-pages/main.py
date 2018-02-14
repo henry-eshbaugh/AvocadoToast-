@@ -2,14 +2,12 @@ from flask import Flask, render_template
 from flask import jsonify
 from flask import Response
 app = Flask(__name__)
-
+app.static_folder = 'static'
 
 @app.route("/")
 @app.route('/index')
 def index():
-	with open('static/index.html') as f:
-		content = f.read()
-	return content
+	return render_template('index.html')
 @app.route('/dash')
 def dash():
 	with open('dashboard.html') as g:
