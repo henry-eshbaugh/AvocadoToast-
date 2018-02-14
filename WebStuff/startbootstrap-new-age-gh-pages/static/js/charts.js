@@ -36,10 +36,11 @@ function dashboardChart() {
 			dataPoints: record.recordData
 		}]
 	});
-	NewUpdateJSON(record.recordData);
-	console.log(record.recordData);
-	chart.render();
-
+	UpdateJSON();
+// 	if(UpdateJSON().done){
+// 		console.log(record.recordData);
+	// chart.render();
+// }
 }
 function sleepBreakdown() {
 		var chart = new CanvasJS.Chart("chartContainer2", {

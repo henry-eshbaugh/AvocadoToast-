@@ -55,7 +55,7 @@ function UpdateJSON(){
 	// 					{'x': 13, 'y': 5.00682427912703},
 	// 					{'x': 14, 'y': 5.78608623851813}];
       for(i=0; i<data.length; i++){
-      record.recordData.push({x: data[i].accelData.norm.x, y: data[i].time.y}); //change to new json format
+      record.recordData.push({x: data[i].accelData.norm, y: data[i].time}); //change to new json format
 			// record.recordData.push({x: data[i].x, y: data[i].y}); //change to new json format
 
     // }
@@ -63,31 +63,39 @@ function UpdateJSON(){
 	}
 	console.log("JSON updated");
 	console.log(record.recordData);
+	// })
+	// .error(function(){
+	// 	console.log('error: JSON not loaded');
+	// })
+	// .done(function(){
+	// 	console.log('JSON loaded')
+	// 	chart.render();
+
 	});
     //Potential time issues
 
 
 }
-
-function NewUpdateJSON(newData){
-	var newData; //new variable to pass by ref
-	$.ajax({
-		url : "/db", //add url to json data here
-		// async: false, //make the data get syncronus to avoid errors with adding data from the sensor
-		dataType : 'json',
-		succsess : function(data){
-			//do stuff to data
-			for(i=0; i<data.length; i++){
-	          console.log(data.length);
-	          console.log(record.recordData);
-	        // record.recordData.push({x: data[i].accelData.norm.x, y: data[i].time.y}); //change to new json format
-	  			record.recordData.push({x: data[i].x, y: data[i].y}); //change to new json format
-			}
-		}
-
-	});
-	newData = record.recordData;//pass to new variable?
-	console.log("JSON updated");
-    console.log(record.recordData);
-
-}
+//
+// function NewUpdateJSON(newData){
+// 	var newData; //new variable to pass by ref
+// 	$.ajax({
+// 		url : "/db", //add url to json data here
+// 		async: false, //make the data get syncronus to avoid errors with adding data from the sensor
+// 		dataType : 'json',
+// 		succsess : function(data){
+// 			//do stuff to data
+// 			for(i=0; i<data.length; i++){
+// 	          console.log(data.length);
+// 	          console.log(record.recordData);
+// 	        // record.recordData.push({x: data[i].accelData.norm.x, y: data[i].time.y}); //change to new json format
+// 	  			record.recordData.push({x: data[i].x, y: data[i].y}); //change to new json format
+// 			}
+// 		}
+//
+// 	});
+// 	newData = record.recordData;//pass to new variable?
+// 	console.log("JSON updated");
+//     console.log(record.recordData);
+//
+// }
