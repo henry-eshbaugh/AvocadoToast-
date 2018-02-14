@@ -8,10 +8,8 @@ app.static_folder = 'static'
 db = 'db.json'
 def slurp(filepath=None):  
     def slurp_(filepath):
-        print("Slurping ", filepath)
         with open(filepath, 'r') as f:
             dat = f.readlines()
-            print("read file; last line was ", dat[-1])
             return [json.loads(s) for s in dat[::-1]]
     if filepath is not None:
         return slurp_(filepath)
@@ -55,8 +53,6 @@ def islaundrydone():
 @app.route('/sensor/<cmd>')
 def sensor(cmd):
     data = slurp()
-    print("Command ", cmd)
-    print("Slurped data", data)
     data = data[0]
     return str({ 'scalar' : data['accelData']['norm'],
                  'x'      : data['accelData']['x']   ,
