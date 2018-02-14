@@ -20,34 +20,54 @@ def mqtt_connect(client):
     while not sta_if.isconnected():
         utime.sleep(1)
 
-    #client = MQTTClient("avocadotoast", "192.168.0.10")
     client.connect()
 
-#if __name__ == '__main__':
-client = MQTTClient("avocadotoast", "192.168.0.10")
-mqtt_connect(client)
+def take_readings(n):
+    cumX = 0
+    cumY = 0
+    cumZ = 0
+    cumTemp = 0
+
+    maxX = -1000
+    maxY = -1000
+    maxZ = -1000
+
+    for i in range(n):
+        xreading = sensor.read_x()
+        yreading = sensor.read_y()
+        zreading = sensor.read_z()
+        tempreading = sensor.read_raw_temperature()
+
+        cumX += xreading
+        cumY += yreading
+        cumZ += zreading
+
+        cumTemp += sensor.read_raw_temperature()
+        maxX = max(maxX, xreading)
+        maxY = max(maxY, yreading)
+        maxZ = max(maxZ, zreading)
+
+        utime.sleep_us(1000)
+
+    x = cumX/n
+    y = cumY/n
+    z = cumZ/n    
+    norm = sqrt(x**2 + y**2 + z**2)
+    temperature = cumTemp/n
+    dateTime = utime.localtime()
+
+    return {"time": dateTime, "accelData": {"x": x, "y": y, "z": z, "norm": norm, "max_x": maxX, "max_y": maxY, "max_z": maxZ}, "temperature": temperature}
+    
+
+#client = MQTTClient("avocadotoast", "192.168.0.10")
+#mqtt_connect(client)
 
 while True:
-#    rawx = sensor.read_raw_x()
-#    rawy = sensor.read_raw_y()
-#    rawz = sensor.read_raw_z()
-    x = sensor.read_x()
-    y = sensor.read_y()
-    z = sensor.read_z()
-    norm = sqrt(x**2 + y**2 + z**2)
-    temperature = sensor.read_raw_temperature()
-    dateTime = utime.localtime()
-    #print("Accelerometer values (m/s^2):\n    x: {0}    y: {1}    z: {2}".format(xAccel, yAccel, zAccel))
-    #print("At time: {0}".format(dateTime))
-#    data = ujson.dumps({"time": dateTime, "accelData": {'x': x, "y": y, "z": z, 'norm': norm, 'rawx': rawx, 'rawy': rawy, 'rawz': rawz}, "temperatureData": temperature})
-    payload = ujson.dumps({"time": dateTime, "accelData": {"x": x, "y": y, "z": z, "norm": norm}, "temperature": temperature})
+    data = take_readings(20)    
+    payload = ujson.dumps(data)
     print(payload)
-    client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
-    utime.sleep(1)
-
-
-
-
+#   client.publish("esys/avocadotoast/sensor", bytes(payload, "utf-8"))
+    utime.sleep_ms(500)
 
 
 

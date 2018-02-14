@@ -29,7 +29,7 @@ class lis3dh:
         # out of powerdown to normal operating
         # mode
         self.i2c.writeto_mem(SENSOR_ADDR, CTRL_REG4, bytearray([0b10001000]))
-        self.i2c.writeto_mem(SENSOR_ADDR, CTRL_REG1, bytearray([0b01110111]))
+        self.i2c.writeto_mem(SENSOR_ADDR, CTRL_REG1, bytearray([0b10010111]))
         self.i2c.writeto_mem(SENSOR_ADDR, TEMP_CFG_REG, bytearray([0b11000000]))
 
     def read_seq(self, addr):
@@ -53,17 +53,20 @@ class lis3dh:
         return self.read_seq(OUT_Z_L)    
 
     def read_raw_temperature(self):
-        return self.read_seq(OUT_ADC3_L)        
+        return self.read_seq(OUT_ADC3_L)
+
+    def raw_accel_to_ms2(self, n):
+        return (n/16380) * GRAVITY_CONST        
 
     def read_x(self):
         rawData = self.unsigned_to_signed_16b(self.read_raw_x())
-        return (rawData/16380) * GRAVITY_CONST
+        return self.raw_accel_to_ms2(rawData)
     def read_y(self):
         rawData = self.unsigned_to_signed_16b(self.read_raw_y())
-        return (rawData/16380) * GRAVITY_CONST
+        return self.raw_accel_to_ms2(rawData)
     def read_z(self):
         rawData = self.unsigned_to_signed_16b(self.read_raw_z())
-        return (rawData/16380) * GRAVITY_CONST
+        return self.raw_accel_to_ms2(rawData)
 
     #def read_temperature(self):
     #    rawData = self.read_seq(OUT_ADC3_L)
