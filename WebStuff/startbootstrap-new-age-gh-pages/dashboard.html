@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <script type="text/javascript" src="static/vendor/jquery/jquery.min.js"></script>
+
+  </head>
+	  <body id="page-top">
+		<!-- helper scripts -->
+
+		<script type="text/javascript">
+		   function toggleElement(id) {
+			   var e = document.getElementById(id);
+			   if(e.style.display == 'block')
+				  e.style.display = 'none';
+			   else
+				  e.style.display = 'block';
+		   }
+		</script>
+
+		<div class="header-content mx-auto">
+		  <button type="button" onclick="toggleElement('Dashboard')" class="btn btn-outline btn-xl js-scroll-trigger">Dashboard</button>
+		</div>
+		<div id="Dashboard" style="display:" ''>
+		  <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+		  <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div>
+		</div>
+
+		<div class="header-content mx-auto">
+		  <button type="button" onclick="toggleElement('Trends')" class="btn btn-outline btn-xl js-scroll-trigger">Dashboard</button>
+		</div>
+		<div id="Trends" style="display:" ''>
+		  <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+		</div>
+		<!-- <title>Eclipse Paho MQTT JavaScript Client Example</title> -->
+		  <!-- Source Paho MQTT Client-->
+
+
+
+
+
+
+
+
+
+	    <!-- Bootstrap core JavaScript -->
+
+    <script src="static/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CanvasJS Plugin -->
+    <script src="static/js/jquery.canvasjs.min.js"></script>
+
+	<!-- Paho JS -->
+    <!-- <script src="static/js/paho-mqtt.js"></script> -->
+	<!-- <script src="static/js/mqttclient.js"></script> -->
+
+
+	<!-- Chart JS file -->
+	<script src="static/js/record.js"></script>
+	<!-- <script src="static/js/fakerecord.js"></script> -->
+
+	<script src="static/js/charts.js"></script>
+
+
+	  </body>
+
+</html>

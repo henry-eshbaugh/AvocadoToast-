@@ -2,17 +2,21 @@
 <html lang="en">
 
   <head>
-
+    <!--Dashboard code start -->
+    <script type="text/javascript" sr="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script>
+    <!-- dashboard code end  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="">
+    <meta name="author" content="Jack Pearson">
 
-    <title>New Age - Start Bootstrap Theme</title>
+    <!-- <title>New Age - Start Bootstrap Theme</title> -->
 
     <!-- Bootstrap core CSS -->
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
+    <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" >
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename = vendor/bootstrap/css/bootstrap.min.css') }}" > -->
     <!-- Custom fonts for this template -->
     <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css">
     <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css">
@@ -86,10 +90,49 @@
       <div class="container">
         <div class="row">
           <div class="col-md-8 mx-auto">
-            <h2 class="section-heading">Discover what all the buzz is about!</h2>
-            <p>Our app is available on any mobile device! Download now to get started!</p>
+            <h2 class="section-heading" style = "margin-bottom:30px">
+                <font color='white'> Try the demo! </font>
+            </h2>
+            <!-- start of dashboard code -->
+            <script type="text/javascript">
+
+                function hideElement(id) {
+                    var e = document.getElementById(id);
+                    e.style.display = 'none';
+                }
+
+                function toggleElement(id) {
+                   var e = document.getElementById(id);
+                   if(e.style.display == 'none')
+                      e.style.display = 'block';
+                   else
+                      e.style.display = 'none';
+                }
+            </script>
+
+            <div class="header-content mx-auto" style="margin-bottom:30px">
+              <button type="button" onclick="toggleElement('Dashboard')" class="btn btn-outline btn-xl js-scroll-trigger">Sleep Data</button>
+            </div>
+
+            <div id="Dashboard" style="margin-bottom:30px;display:" ''>
+              <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+              <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div>
+            </div>
+
+            <div class="header-content mx-auto" style="margin-bottom:30px">
+              <button type="button" onclick="toggleElement('Trends')" class="btn btn-outline btn-xl js-scroll-trigger">Trends</button>
+            </div>
+            <div id="Trends" style="margin-bottom:30px;display:" ''>
+              <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
+            </div>
+            <!-- end of dashboard code -->
+
+            <h2 class="section-heading">
+                <font color = "white"> Discover what all the buzz is about ! </font color>
+            </h2>
+            <p><font color = "white"> Our app is available on any mobile device! Download now to get started! </font color></p>
             <div class="badges">
-              <a class="badge-link" href="https://play.google.com/store/apps/details?id=com.avocado.avocado.AOVNCCGWMRTUOWL&hl=en"><img src="img/google-play-badge.svg" alt=""></a>
+              <a class="badge-link" href=#><img src="img/google-play-badge.svg" alt=""></a>
               <a class="badge-link" href="#"><img src="img/app-store-badge.svg" alt=""></a>
             </div>
           </div>
@@ -127,30 +170,30 @@
                   <div class="feature-item">
                     <i class="icon-screen-smartphone text-primary"></i>
                     <h3>Easy access</h3>
-                    <p class="text-muted">Use the platform on any internet connected device</p>
+                    <p class="text-muted">Use the web platform on any internet connected device</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-camera text-primary"></i>
-                    <h3>Flexible Use</h3>
-                    <p class="text-muted">Put an image, video, animation, or anything else in the screen!</p>
+                    <i class="icon-graph text-primary"></i>
+                    <h3>Graphical display</h3>
+                    <p class="text-muted">See each nights data, displayed conveniently against REM cycle information.</p>
                   </div>
                 </div>
               </div>
               <div class="row">
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-present text-primary"></i>
-                    <h3>Don't pay a penny!</h3>
-                    <p class="text-muted">This app is free to use</p>
+                    <i class="icon-bell text-primary"></i>
+                    <h3>Wake up fresh!</h3>
+                    <p class="text-muted">Set alarms to get you out of bed during light sleep periods.</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
-                    <i class="icon-lock-open text-primary"></i>
-                    <h3>Open Source</h3>
-                    <p class="text-muted">Since this theme is MIT licensed, you can use it commercially!</p>
+                    <i class="icon-calendar text-primary"></i>
+                    <h3>Calender view</h3>
+                    <p class="text-muted">Look at an overview of your week or month's sleep to track your sleep quality.</p>
                   </div>
                 </div>
               </div>
@@ -160,7 +203,7 @@
       </div>
     </section>
 <!-- meet the team-->
-    <section class="cta">
+    <section class="cta" id="contact">
       <div class="cta-content">
         <div class="container">
           <h2>Meet the team. <br> <!--<br>Start building.</h2>-->
@@ -170,24 +213,24 @@
       <div class="overlay"></div>
     </section>
 <!-- contact us -->
-    <section class="contact bg-primary" id="contact">
+    <section class="contact bg-primary">
       <div class="container">
         <h2>Follow us!</h2>
           <!--<i class="fa fa-heart"></i>-->
 
         <ul class="list-inline list-social">
           <li class="list-inline-item social-twitter">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-twitter"></i>
             </a>
           </li>
           <li class="list-inline-item social-facebook">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-facebook"></i>
             </a>
           </li>
           <li class="list-inline-item social-google-plus">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">
+            <a href=#>
               <i class="fa fa-google-plus"></i>
             </a>
           </li>
@@ -202,27 +245,34 @@
         <p>&copy; AvocadoToast 2018. All Rights Reserved.</p>
         <ul class="list-inline">
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Privacy</a>
+            <a href=#>Privacy</a>
           </li>
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">Terms</a>
+            <a href=#>Terms</a>
           </li>
           <li class="list-inline-item">
-            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ">FAQ</a>
+            <a href=#>FAQ</a>
           </li>
         </ul>
       </div>
     </footer>
-
     <!-- Bootstrap core JavaScript -->
-    <script src="vendor/jquery/jquery.min.js"></script>
+    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script src="vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+    <!-- CanvasJS Plugin -->
+    <script src="js/jquery.canvasjs.min.js"></script>
 
     <!-- Plugin JavaScript -->
     <script src="vendor/jquery-easing/jquery.easing.min.js"></script>
 
     <!-- Custom scripts for this template -->
     <script src="js/new-age.min.js"></script>
+
+    <!-- Chart JS file -->
+	<script src="js/fakerecord.js"></script>
+
+	<script src="js/charts.js"></script>
 
   </body>
 
