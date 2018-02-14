@@ -1,9 +1,14 @@
 
 window.onload = function () {
-	UpdateJSON()
 	dashboardChart()
 	sleepBreakdown()
 	trendsChart()
+	setInterval(
+		function(){
+		dashboardChart()
+		sleepBreakdown()
+		trendsChart()},
+		10000);
 
 }
 
