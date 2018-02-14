@@ -69,7 +69,7 @@ function UpdateJSON(){
 	// })
 	// .done(function(){
 	// 	console.log('JSON loaded')
-	// 	chart.render();
+	// chart.render();
 
 	});
     //Potential time issues
