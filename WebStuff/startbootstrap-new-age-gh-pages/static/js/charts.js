@@ -1,97 +1,115 @@
 
 window.onload = function () {
 	dashboardChart()
-	sleepBreakdown()
+	// sleepBreakdown()
 	trendsChart()
 	setInterval(
 		function(){
 		dashboardChart()
-		sleepBreakdown()
+		// sleepBreakdown()
 		trendsChart()},
-		10000);
+		100000);
 
 }
 
 function dashboardChart() {
 
+var rec = {
+	temp : [], // dataPoints
+	activ : [] // dataPoints
+};
 
-	var dps = []; // dataPoints
+
+function addData(data){
+
 	var chart = new CanvasJS.Chart("chartContainer", {
 		backgroundColor: "transparent",
 		// title :{
 		// 	text: "Sleep data",
 		// 	padding : 5,
 		// },
-		axisY: {
+		axisY: [{
 			includeZero: false,
 			title : "Acceleration m/s²",
 			titleFontSize : 15
-		},
+		// },
+		// {
+		// 	includeZero: false,
+		// 	title : "Temperature",
+		// 	titleFontSize: 15
+		}],
 		axisX : {
 			title : "Time",
 			titleFontSize : 15
 		},
 		data: [{
-			type: "column",
-
-			dataPoints: dps
-		},
-		{
 			type: "line",
-
-			dataPoints: dps
+			// axisYindex: 0,
+			dataPoints: rec.activ
+		// },
+		// {
+		// 	type: "line",
+		// 	axisYindex: 1,
+		// 	dataPoints: rec.temp
 		}]
 	});
-	function addData(data) {
-		for (var i = 0; i < data.length; i++) {
-			dps.push({
-				x: new Date(data[i].time[0], data[i].time[1], data[i].time[2], data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
-				y: data[i].accelData.norm
-			});
+	for (var i = 0; i < data.length; i++) {
+		if(data[i].state = "NEW_SESSION"){
+    //
+		// 	// rec.temp = [];
+		// 	// rec.activ = [];
+		// 	i++;
 		}
-		console.log(dps);
-		chart.render();
-
+		rec.activ.push({
+			x: new Date(data[i].time[0], data[i].time[1], data[i].time[2], data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
+			y: data[i].activity
+		// });
+		// rec.temp.push({
+		// 	x: new Date(data[i].time[0], data[i].time[1], data[i].time[2], data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
+		// 	y: data[i].temperature
+		})
 	}
 
-	$.getJSON('/db', addData);
-// 	if(UpdateJSON().done){
-	// console.log(record.recordData);
-	// chart.render();
+
+		chart.render();
+
+}
+
+$.getJSON('/db', addData);
+
+}
+// function sleepBreakdown() {
+// 		var chart = new CanvasJS.Chart("chartContainer2", {
+// 			backgroundColor: "transparent",
+//
+// 	  axisY : {
+// 		title : "Breakdown of total sleep %",
+// 		titleFontSize : 15
+// 	},
+// 	  data: [{
+// 		type: "stackedBar100",
+// 		dataPoints: [
+// 			{ x: new Date(2016, 1, 0), y: 40000 },
+// 		]
+// 	  },
+// 	  {
+// 		type: "stackedBar100",
+// 		dataPoints: [
+// 			{ x: new Date(2016, 1, 0), y: 30000 },
+// 		]
+// 	  },
+// 	  {
+// 		type: "stackedBar100",
+// 		dataPoints: [
+// 			{ x: new Date(2016, 1, 0), y: 20000 },
+// 		]
+// 	  }
+// 	]
+// 	});
+//
+//
+// 	  chart.render();
 // }
-}
-function sleepBreakdown() {
-		var chart = new CanvasJS.Chart("chartContainer2", {
-			backgroundColor: "transparent",
-
-	  axisY : {
-		title : "Breakdown of total sleep %",
-		titleFontSize : 15
-	},
-	  data: [{
-		type: "stackedBar100",
-		dataPoints: [
-			{ x: new Date(2016, 1, 0), y: 40000 },
-		]
-	  },
-	  {
-		type: "stackedBar100",
-		dataPoints: [
-			{ x: new Date(2016, 1, 0), y: 30000 },
-		]
-	  },
-	  {
-		type: "stackedBar100",
-		dataPoints: [
-			{ x: new Date(2016, 1, 0), y: 20000 },
-		]
-	  }
-	]
-	});
-
-
-	  chart.render();
-}
 function trendsChart() {
 
 	var chart = new CanvasJS.Chart("chartContainer3", {

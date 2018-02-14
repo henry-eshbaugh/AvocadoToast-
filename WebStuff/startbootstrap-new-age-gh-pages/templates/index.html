@@ -106,12 +106,6 @@
             </h2>
             <!-- start of dashboard code -->
             <script type="text/javascript">
-
-                function hideElement(id) {
-                    var e = document.getElementById(id);
-                    e.style.display = 'none';
-                }
-
                 function toggleElement(id) {
                    var e = document.getElementById(id);
                    if(e.style.display == 'none')
@@ -127,7 +121,7 @@
 
             <div id="Dashboard" style="margin-bottom:30px;display:" ''>
               <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
-              <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div>
+              <!-- <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div> -->
             </div>
 
             <div class="header-content mx-auto" style="margin-bottom:30px">
@@ -268,22 +262,17 @@
       </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- CanvasJS Plugin -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/jquery.canvasjs.min.js') }}"></script>
 
     <!-- Plugin JavaScript -->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for this template -->
-    <!-- <script src="js/new-age.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/new-age.min.js') }}"></script>
     <!-- Chart JS file -->
-	<!-- <script src="js/fakerecord.js"></script> -->
-    <script type="text/javascript" src="{{ url_for('static', filename =  'js/fakerecord.js') }}"></script>
-	<!-- <script src="js/charts.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename =  'js/record.js') }}"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/charts.js') }}"></script>
   </body>
 
