@@ -1,0 +1,14 @@
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 0, 5, 1]}
+{"temperature": 64502.4, "time": [2000, 1, 1, 0, 1, 0, 5, 1], "activity": 0}
+{"temperature": 64444.8, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 0.0}
+{"temperature": 64441.6, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0}
+{"temperature": 64470.4, "time": [2000, 1, 1, 0, 4, 1, 5, 1], "activity": 1.0}
+{"temperature": 64464.0, "time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.2}
+{"temperature": 64467.2, "time": [2000, 1, 1, 0, 6, 0, 5, 1], "activity": 1.0}
+{"temperature": 64534.4, "time": [2000, 1, 1, 0, 7, 1, 5, 1], "activity": 0.6}
+{"temperature": 64512.0, "time": [2000, 1, 1, 0, 8, 0, 5, 1], "activity": 2.12}
+{"temperature": 64505.6, "time": [2000, 1, 1, 0, 9, 0, 5, 1], "activity": 10.4}
+{"temperature": 64556.8, "time": [2000, 1, 1, 0, 10, 0, 5, 1], "activity": 4.24}
+{"temperature": 64566.4, "time": [2000, 1, 1, 0, 11, 0, 5, 1], "activity": 2.12}
+{"temperature": 64595.2, "time": [2000, 1, 1, 0, 12, 0, 5, 1], "activity": 6.8}
+{"temperature": 64572.8, "time": [2000, 1, 1, 0, 13, 0, 5, 1], "activity": 4.88}

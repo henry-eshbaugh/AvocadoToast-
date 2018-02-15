@@ -1,0 +1,5 @@
+{"state": "NEW_SESSION", "time": [2001, 1, 1, 0, 0, 0, 5, 1]}
+{"time": [2000, 1, 1, 0, 1, 0, 5, 1], "activity": 11, "state": "MEASURING", "temperature": 64883.2}
+{"time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 2.2, "state": "MEASURING", "temperature": 64886.4}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.44, "state": "MEASURING", "temperature": 64915.2}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 64921.6}
