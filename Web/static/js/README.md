@@ -23,7 +23,7 @@ Current Features:
 -Parsing of JSON data and correction of date/time values  
 -Configuring of JSON data into (x: , y: ) data to be graphed  
 -Graphing of sleep activity against time (currently showcasing data collected throughout a day, due to time constraints)  
-    -Has been tested with Data recorded during sleep (see data folder)  
+    --Has been tested with Data recorded during sleep (see data folder)  
 -Interactive features, such as toggling data sets, zooming of graph and on-hover data highlighting  
 
 Partially completed Features:  
@@ -33,9 +33,9 @@ Partially completed Features:
 
 Feasible Future Features:  
 -Plotting of classifiers for types of sleep eg. Deep sleep, Light sleep, REM sleep  
-    -Not implemented due to limited time to collect data  
+    --Not implemented due to limited time to collect data  
 -Recording and plotting of temperature to determine potential trends (sensor on device)  
-    -Requires more on-board processing of data to be useful  
+    --Requires more on-board processing of data to be useful  
 -Tracking of sleep deficit and other trends  
 -Simple incorporation of other sensors  
 -Potential outputting of graphs to other apps    
