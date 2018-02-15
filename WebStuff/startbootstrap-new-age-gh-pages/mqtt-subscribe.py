@@ -7,8 +7,11 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("esys/avocadotoast/#")
 
 def on_message(client, userdata, msg):
-    with open('db.json', 'a') as f:
-        f.write(msg.payload.decode("utf-8") + '\n')
+    with open('db1.json', 'a') as f:
+        raw_payload = msg.payload.decode("utf-8")
+        dat = json.dumps(raw_payload)
+        dat['recvtime'] = time.localtime()
+        f.write(json.loads(dat) + '\n')
 
 client = mqtt.Client()
 client.on_connect = on_connect

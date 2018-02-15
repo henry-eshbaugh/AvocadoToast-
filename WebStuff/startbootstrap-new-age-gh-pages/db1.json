@@ -55,3 +55,75 @@
 {"time": [2000, 1, 4, 0, 11, 0, 5, 1], "activity": 2.44, "state": "MEASURING", "temperature": 64620.8}
 {"time": [2000, 1, 4, 0, 12, 0, 5, 1], "activity": 2.4, "state": "MEASURING", "temperature": 64560.0}
 {"time": [2000, 1, 4, 0, 13, 0, 5, 1], "activity": 0.48, "state": "MEASURING", "temperature": 64547.2}
+{"state": "NEW_SESSION", "time": [2000, 1, 5, 0, 0, 0, 5, 1]}
+{"time": [2000, 1, 5, 0, 1, 1, 5, 1], "activity": 40, "state": "MEASURING", "temperature": 569.6}
+{"time": [2000, 1, 5, 0, 2, 0, 5, 1], "activity": 22.0, "state": "MEASURING", "temperature": 592.0}
+{"time": [2000, 1, 5, 0, 3, 1, 5, 1], "activity": 8.4, "state": "MEASURING", "temperature": 659.2}
+{"time": [2000, 1, 5, 0, 4, 0, 5, 1], "activity": 1.36, "state": "MEASURING", "temperature": 729.6}
+{"time": [2000, 1, 5, 0, 5, 1, 5, 1], "activity": 8.8, "state": "MEASURING", "temperature": 809.6}
+{"time": [2000, 1, 5, 0, 6, 0, 5, 1], "activity": 3.6, "state": "MEASURING", "temperature": 896.0}
+{"time": [2000, 1, 5, 0, 7, 0, 5, 1], "activity": 11.76, "state": "MEASURING", "temperature": 934.4}
+{"time": [2000, 1, 5, 0, 8, 0, 5, 1], "activity": 11.2, "state": "MEASURING", "temperature": 908.8}
+{"time": [2000, 1, 1, 0, 11, 0, 5, 1], "activity": 25.04, "state": "MEASURING", "temperature": 908.8}
+{"time": [2000, 1, 1, 0, 12, 0, 5, 1], "activity": 8.59999, "state": "MEASURING", "temperature": 947.2}
+{"time": [2000, 1, 1, 0, 13, 0, 5, 1], "activity": 10.68, "state": "MEASURING", "temperature": 928.0}
+{"time": [2000, 1, 1, 0, 1, 5, 5, 1], "activity": 38, "state": "MEASURING", "temperature": 768.0}
+{"time": [2000, 1, 1, 0, 1, 5, 5, 1], "activity": 38, "state": "MEASURING", "temperature": 768.0}
+{"time": [2000, 1, 1, 0, 2, 1, 5, 1], "activity": 37.6, "state": "MEASURING", "temperature": 768.0}
+{"time": [2000, 1, 1, 0, 2, 1, 5, 1], "activity": 37.6, "state": "MEASURING", "temperature": 768.0}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 42.52, "state": "MEASURING", "temperature": 745.6}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 42.52, "state": "MEASURING", "temperature": 745.6}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 10.2, "state": "MEASURING", "temperature": 732.8}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 10.2, "state": "MEASURING", "temperature": 732.8}
+{"time": [2000, 1, 1, 0, 1, 2, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 65315.2}
+{"time": [2000, 1, 1, 0, 1, 2, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 65315.2}
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 4, 5, 1]}
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 4, 5, 1]}
+{"time": [2000, 1, 1, 0, 1, 4, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 65363.2}
+{"time": [2000, 1, 1, 0, 1, 4, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 65363.2}
+{"time": [2000, 1, 1, 0, 1, 4, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 65363.2}
+{"time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65360.0}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65360.0}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65360.0}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 62092.8}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58860.8}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58860.8}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58860.8}
+{"time": [2000, 1, 1, 0, 6, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65376.0}
+{"time": [2000, 1, 1, 0, 6, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65376.0}
+{"time": [2000, 1, 1, 0, 6, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 65376.0}
+{"time": [2000, 1, 1, 0, 7, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 32758.4}
+{"time": [2000, 1, 1, 0, 7, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 32758.4}
+{"time": [2000, 1, 1, 0, 7, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 32758.4}
+{"time": [2000, 1, 1, 0, 8, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58870.4}
+{"time": [2000, 1, 1, 0, 8, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58870.4}
+{"time": [2000, 1, 1, 0, 8, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 58870.4}
+{"time": [2000, 1, 1, 0, 9, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 52329.6}
+{"time": [2000, 1, 1, 0, 9, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 52329.6}
+{"time": [2000, 1, 1, 0, 9, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 52329.6}
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 1, 5, 1]}
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 1, 5, 1]}
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 1, 5, 1]}
+{"time": [2000, 1, 1, 0, 1, 1, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 32771.2}
+{"time": [2000, 1, 1, 0, 1, 1, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 32771.2}
+{"time": [2000, 1, 1, 0, 1, 1, 5, 1], "activity": 0, "state": "MEASURING", "temperature": 32771.2}
+{"time": [2000, 1, 1, 0, 2, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 22937.6}
+{"time": [2000, 1, 1, 0, 2, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 22937.6}
+{"time": [2000, 1, 1, 0, 2, 1, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 22937.6}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 9888.0}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 9888.0}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.0, "state": "MEASURING", "temperature": 9888.0}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 1.0, "state": "MEASURING", "temperature": 156.8}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 1.0, "state": "MEASURING", "temperature": 156.8}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 1.0, "state": "MEASURING", "temperature": 156.8}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.24, "state": "MEASURING", "temperature": 3392.0}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.24, "state": "MEASURING", "temperature": 3392.0}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 0.24, "state": "MEASURING", "temperature": 3392.0}
+{"time": [2000, 1, 1, 0, 6, 0, 5, 1], "activity": 1.2, "state": "MEASURING", "temperature": 240.0}
+{"time": [2000, 1, 1, 0, 6, 0, 5, 1], "activity": 1.2, "state": "MEASURING", "temperature": 240.0}
+{"time": [2000, 1, 1, 0, 6, 0, 5, 1], "activity": 1.2, "state": "MEASURING", "temperature": 240.0}
