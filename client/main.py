@@ -7,7 +7,8 @@ import ujson
 import network
 
 i2c = I2C(scl=Pin(5), sda=Pin(4), freq=10000)
-
+led = Pin(12, Pin.OUT)
+led.on()
 sensor = lis3dh.lis3dh(i2c)
 
 # establishes a connection with the MQTT broker
@@ -66,37 +67,41 @@ def activity_in_chunk(chunk, thresh = 0.08):
 def arr_diff(arr):
     return [j-i for i, j in zip(arr[:-1], arr[1:])]
 
-
+# creates a window of 5 chunks long which is then used to calculate activity
 def add_to_window(activityCount, activityWindow):
+    # add to the front of the queue
     activityWindow = [activityCount] + activityWindow
+    # remove the last item if the queue is too long
     if len(activityWindow) > 5:
         return activityWindow[:-1]
     else:
         return activityWindow
 
+# apply the weighted sum of the activities in the window
 def process_window(activityWindow, weights = [0.04, 0.2, 1, 0.2, 0.04]):
+    # This makes sure there is always a centre value in the window
     if len(activityWindow) < 5:
         return sum(i*j for i,j in zip(activityWindow, weights[2:]))
     else:
         return sum(i*j for i,j in zip(activityWindow, weights))
 
-
+# construct the JSON payload to send to the broker
 def construct_payload(state, time, activity, temp):
     adjustedTime = time[0], time[1], time[2], time[3], time[4]+1, time[5], time[6], time[7]
     return ujson.dumps({"state": state, "time": adjustedTime, "activity": activity, "temperature": temp})
 
-#client = MQTTClient("avocadotoast", "192.168.0.10")
-#mqtt_connect(client)
 
-#client.publish("esys/avocadotoast/begin", bytes("NEW_SESSION", "utf-8"))
+# establish the connection with the broker
+client = MQTTClient("avocadotoast", "192.168.0.10")
+mqtt_connect(client)
 
 
-
+# take an initial time reading (epoch is (2000, 1, 1, 0, 0, 0, 5, 1))
 curTime = utime.localtime()
 newSession = {"state": "NEW_SESSION", "time": curTime}
 newSessionJSON = ujson.dumps(newSession)
 print(newSessionJSON)
-#client.publish("esys/avocadotoast/startup", bytes(newSessionJson), "utf-8")
+client.publish("esys/avocadotoast/startup", bytes(newSessionJSON, "utf-8"))
 
 chunkData = []
 activityWindow = []
@@ -117,11 +122,13 @@ while True:
         
         payload = construct_payload("MEASURING", curTime, activity, curData["temperature"])    
             
-#        if len(payloadQueue) == 3:
-#            print(payloadQueue.pop())
-        
+        if activity > 3:
+            led.off()
+        else:
+            led.on() 
+
         print(payload)
-#        client.publish("esys/avocadotoast/activity", bytes(payload, "utf-8"))
+        client.publish("esys/avocadotoast/activity", bytes(payload, "utf-8"))
         curTime = utime.localtime()
         chunkData = [] 
          
