@@ -19,20 +19,7 @@ def slurp(filepath=None):
 @app.route("/")
 @app.route('/index')
 def index():
-        return render_template('index.html')
-@app.route('/dash')
-def dash():
-        with open('dashboard.html') as g:
-                content = g.read()
-        return content
-
-# @app.route('/db', methods = ['GET'])
-# def file():
-#     with open('db.json', 'r') as f:
-#         data = f.read()
-#     js = jsonify(data)
-#     js.status_code = 200
-#     return js
+	return render_template('index.html')
 
 @app.route('/db', methods = ['GET'])
 def file():

@@ -3,14 +3,12 @@
 
   <head>
     <!--Dashboard code start -->
-    <script type="text/javascript" sr="https://canvasjs.com/assets/script/jquery-1.11.1.min.js"></script>
-    <!-- <script type="text/javascript" src="vendor/jquery/jquery.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/jquery/jquery.min.js') }}"></script>
     <!-- dashboard code end  -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
-    <meta name="author" content="Jack Pearson">
+    <meta name="author" content="Toasty">
 
     <!-- <title>New Age - Start Bootstrap Theme</title> -->
 
@@ -18,9 +16,9 @@
 
     <!-- <link rel="stylesheet" href="vendor/bootstrap/css/bootstrap.min.css" > -->
     <!-- Custom fonts for this template -->
-    <link type="text/css" href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
+    <!-- <link type="text/css" href="https://fonts.googleapis.com/css?family=Muli" rel="stylesheet">
     <link type="text/css" href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
-    <link type="text/css" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet">
+    <link type="text/css" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900" rel="stylesheet"> -->
     <!-- <link rel="stylesheet" href="vendor/font-awesome/css/font-awesome.min.css"> -->
     <!-- <link rel="stylesheet" href="vendor/simple-line-icons/css/simple-line-icons.css"> -->
     <!-- <link href="css/new-age.min.css" rel="stylesheet"> -->
@@ -84,7 +82,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="" style = "margin-top:100px">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -106,12 +104,6 @@
             </h2>
             <!-- start of dashboard code -->
             <script type="text/javascript">
-
-                function hideElement(id) {
-                    var e = document.getElementById(id);
-                    e.style.display = 'none';
-                }
-
                 function toggleElement(id) {
                    var e = document.getElementById(id);
                    if(e.style.display == 'none')
@@ -126,8 +118,8 @@
             </div>
 
             <div id="Dashboard" style="margin-bottom:30px;display:" ''>
-              <div id="chartContainer" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
-              <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div>
+              <div id="chartContainer" style="height: 370px; max-width: 1366px; margin: 0px auto;" ></div>
+              <!-- <div id="chartContainer2" style="height: 200px; max-width 920px: ; margin: 0px auto;" ></div> -->
             </div>
 
             <div class="header-content mx-auto" style="margin-bottom:30px">
@@ -165,7 +157,7 @@
                 <div class="device">
                   <div class="screen">
                     <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
-                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="">
+                    <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="" style = "margin-top:100px">
                   </div>
                   <div class="button">
                     <!-- You can hook the "home button" to some JavaScript events or just remove it -->
@@ -203,7 +195,7 @@
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-calendar text-primary"></i>
-                    <h3>Calender view</h3>
+                    <h3>Calendar view</h3>
                     <p class="text-muted">Look at an overview of your week or month's sleep to track your sleep quality.</p>
                   </div>
                 </div>
@@ -268,22 +260,17 @@
       </div>
     </footer>
     <!-- Bootstrap core JavaScript -->
-    <!-- <script src="vendor/jquery/jquery.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
 
     <!-- CanvasJS Plugin -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/jquery.canvasjs.min.js') }}"></script>
 
     <!-- Plugin JavaScript -->
-    <!-- <script src="vendor/jquery-easing/jquery.easing.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'vendor/jquery-easing/jquery.easing.min.js') }}"></script>
     <!-- Custom scripts for this template -->
-    <!-- <script src="js/new-age.min.js"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/new-age.min.js') }}"></script>
     <!-- Chart JS file -->
-	<!-- <script src="js/fakerecord.js"></script> -->
-    <script type="text/javascript" src="{{ url_for('static', filename =  'js/fakerecord.js') }}"></script>
-	<!-- <script src="js/charts.js"></script> -->
+    <!-- <script type="text/javascript" src="{{ url_for('static', filename =  'js/record.js') }}"></script> -->
     <script type="text/javascript" src="{{ url_for('static', filename =  'js/charts.js') }}"></script>
   </body>
 
