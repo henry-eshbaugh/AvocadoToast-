@@ -1,0 +1,10 @@
+{"state": "NEW_SESSION", "time": [2000, 1, 1, 0, 0, 0, 5, 1]}
+{"time": [2000, 1, 1, 0, 1, 0, 5, 1], "activity": 35, "state": "MEASURING", "temperature": 64614.4}
+{"time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 40.0, "state": "MEASURING", "temperature": 64675.2}
+{"time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 11.0, "state": "MEASURING", "temperature": 64614.4}
+{"time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 2.92, "state": "MEASURING", "temperature": 64601.6}
+{"time": [2000, 1, 1, 0, 5, 0, 5, 1], "activity": 11.2, "state": "MEASURING", "temperature": 64608.0}
+{"time": [2000, 1, 1, 0, 6, 0, 5, 1], "activity": 2.92, "state": "MEASURING", "temperature": 64598.4}
+{"time": [2000, 1, 1, 0, 7, 0, 5, 1], "activity": 0.32, "state": "MEASURING", "temperature": 64588.8}
+{"time": [2000, 1, 1, 0, 8, 0, 5, 1], "activity": 0.2, "state": "MEASURING", "temperature": 64614.4}
+{"time": [2000, 1, 1, 0, 9, 0, 5, 1], "activity": 0.8, "state": "MEASURING", "temperature": 64556.8}
