@@ -1,4 +1,4 @@
-Chart.js : JavaScript for graphing JSON data from URL using CanvasJS 
+Chart.js : JavaScript for graphing JSON data from URL using CanvasJS
 
 Configures settings and renders interactive charts from JSON data hosted on a server, to HTML div IDs.
 This includes parsing and handling of headers to separate data logs and provide correct timestamps.
