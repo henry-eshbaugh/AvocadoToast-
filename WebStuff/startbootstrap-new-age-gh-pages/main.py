@@ -12,7 +12,7 @@ def index():
 
 @app.route('/db', methods = ['GET'])
 def file():
-    with open('db1.json') as f:
+    with open('db.json') as f:
         data = f.readlines()
     js = list(map(json.loads, data))
     return jsonify(js)

@@ -8,10 +8,10 @@ def on_connect(client, userdata, flags, rc):
     client.subscribe("esys/avocadotoast/#")
 
 def on_message(client, userdata, msg):
-    with open('db1.json', 'a') as f:
+    with open('db.json', 'a') as f:
         raw_payload = msg.payload.decode("utf-8")
         dat = json.loads(raw_payload)
-        t = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+        t = datetime.now().strftime("%y, %m, %d, %H, %M, %S")
         dat['recvtime'] = t
         f.write(json.dumps(dat) + '\n')
 

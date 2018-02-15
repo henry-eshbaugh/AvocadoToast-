@@ -77,10 +77,19 @@ function addData(data){
 // Data point parsing ---------------------------------------------------
 	for (var i = 0; i < data.length; i++) {
 
-		rec.activ.push({ //date slightly adjusted to work with unrealistic test data
-			x: new Date(data[i].time[0], data[i].time[1], '1', data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
+		//Parse Python flask server timestamp
+		 var servtime = (data[i].recvtime );
+		 var res = servtime.split(",");
+
+		 var timestamp = [];
+		 res.forEach(function(item) {
+  	 timestamp.push(parseInt(item));
+		});
+
+		// JSON record separating -------------------------------------------------
+		rec.activ.push({
+			x: new Date(timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]),
 			y: data[i].activity
-// JSON record separating -------------------------------------------------
 		})
 		if(data[i].activity === undefined){
 			sliceIndex.push(i);

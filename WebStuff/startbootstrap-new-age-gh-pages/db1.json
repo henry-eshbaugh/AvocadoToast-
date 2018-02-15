@@ -305,3 +305,34 @@
 {"time": [2000, 1, 1, 0, 27, 0, 5, 1], "activity": 1.0, "state": "MEASURING", "temperature": 515.2}
 {"state": "MEASURING", "activity": 1.0, "recvtime": "2018-02-15 12:31:38", "temperature": 515.2, "time": [2000, 1, 1, 0, 27, 0, 5, 1]}
 {"time": [2000, 1, 1, 0, 27, 0, 5, 1], "activity": 1.0, "state": "MEASURING", "temperature": 515.2}
+{"state": "NEW_SESSION", "recvtime": "18, 02, 15, 13, 02, 12", "time": [2000, 1, 1, 0, 0, 5, 5, 1]}
+{"recvtime": "18, 02, 15, 13, 03, 09", "temperature": 403.2, "accelData": {"y": 0.13362, "x": 0.111111, "z": 9.40704, "xynorm": 0.173781, "norm": 9.40865}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "state": "MEASURING", "activity": 0}
+{"state": "MEASURING", "temperature": 403.2, "accelData": {"norm": 9.40865, "y": 0.13362, "x": 0.111111, "xynorm": 0.173781, "z": 9.40704}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "activity": 0}
+{"state": "MEASURING", "temperature": 403.2, "accelData": {"norm": 9.40865, "y": 0.13362, "x": 0.111111, "xynorm": 0.173781, "z": 9.40704}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "activity": 0}
+{"state": "MEASURING", "temperature": 403.2, "accelData": {"norm": 9.40865, "y": 0.13362, "x": 0.111111, "xynorm": 0.173781, "z": 9.40704}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "activity": 0}
+{"recvtime": "2018-02-15 13:03:09", "temperature": 403.2, "accelData": {"y": 0.13362, "x": 0.111111, "z": 9.40704, "xynorm": 0.173781, "norm": 9.40865}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "state": "MEASURING", "activity": 0}
+{"state": "MEASURING", "temperature": 361.6, "accelData": {"norm": 9.44165, "y": 0.116379, "x": 0.0838118, "xynorm": 0.143417, "z": 9.44056}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 1.0}
+{"recvtime": "18, 02, 15, 13, 04, 12", "temperature": 361.6, "accelData": {"y": 0.116379, "x": 0.0838118, "z": 9.44056, "xynorm": 0.143417, "norm": 9.44165}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "state": "MEASURING", "activity": 1.0}
+{"recvtime": "2018-02-15 13:04:12", "temperature": 361.6, "accelData": {"y": 0.116379, "x": 0.0838118, "z": 9.44056, "xynorm": 0.143417, "norm": 9.44165}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "state": "MEASURING", "activity": 1.0}
+{"state": "MEASURING", "temperature": 361.6, "accelData": {"norm": 9.44165, "y": 0.116379, "x": 0.0838118, "xynorm": 0.143417, "z": 9.44056}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 1.0}
+{"state": "MEASURING", "temperature": 361.6, "accelData": {"norm": 9.44165, "y": 0.116379, "x": 0.0838118, "xynorm": 0.143417, "z": 9.44056}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "activity": 1.0}
+{"recvtime": "18, 02, 15, 13, 05, 14", "temperature": 313.6, "accelData": {"y": 0.117816, "x": 0.120689, "z": 9.47361, "xynorm": 0.16866, "norm": 9.47511}, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "state": "MEASURING", "activity": 0.2}
+{"state": "MEASURING", "temperature": 313.6, "accelData": {"norm": 9.47511, "y": 0.117816, "x": 0.120689, "xynorm": 0.16866, "z": 9.47361}, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.2}
+{"recvtime": "2018-02-15 13:05:14", "temperature": 313.6, "accelData": {"y": 0.117816, "x": 0.120689, "z": 9.47361, "xynorm": 0.16866, "norm": 9.47511}, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "state": "MEASURING", "activity": 0.2}
+{"state": "MEASURING", "temperature": 313.6, "accelData": {"norm": 9.47511, "y": 0.117816, "x": 0.120689, "xynorm": 0.16866, "z": 9.47361}, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.2}
+{"state": "MEASURING", "temperature": 313.6, "accelData": {"norm": 9.47511, "y": 0.117816, "x": 0.120689, "xynorm": 0.16866, "z": 9.47361}, "time": [2000, 1, 1, 0, 3, 0, 5, 1], "activity": 0.2}
+{"recvtime": "18, 02, 15, 13, 06, 19", "temperature": 262.4, "accelData": {"y": 0.0895589, "x": 0.0732755, "z": 9.46834, "xynorm": 0.115716, "norm": 9.46904}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "state": "MEASURING", "activity": 0.04}
+{"state": "MEASURING", "temperature": 262.4, "accelData": {"norm": 9.46904, "y": 0.0895589, "x": 0.0732755, "xynorm": 0.115716, "z": 9.46834}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.04}
+{"state": "MEASURING", "temperature": 262.4, "accelData": {"norm": 9.46904, "y": 0.0895589, "x": 0.0732755, "xynorm": 0.115716, "z": 9.46834}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.04}
+{"recvtime": "18, 02, 15, 13, 06, 19", "temperature": 262.4, "accelData": {"y": 0.0895589, "x": 0.0732755, "z": 9.46834, "xynorm": 0.115716, "norm": 9.46904}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "state": "MEASURING", "activity": 0.04}
+{"recvtime": "2018-02-15 13:06:19", "temperature": 262.4, "accelData": {"y": 0.0895589, "x": 0.0732755, "z": 9.46834, "xynorm": 0.115716, "norm": 9.46904}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "state": "MEASURING", "activity": 0.04}
+{"state": "MEASURING", "temperature": 262.4, "accelData": {"norm": 9.46904, "y": 0.0895589, "x": 0.0732755, "xynorm": 0.115716, "z": 9.46834}, "time": [2000, 1, 1, 0, 4, 0, 5, 1], "activity": 0.04}
+{"recvtime": "18, 02, 15, 13, 20, 08", "temperature": 288.0, "accelData": {"y": 0.11159, "x": 0.0943482, "z": 9.42859, "xynorm": 0.146129, "norm": 9.42972}, "time": [2000, 1, 1, 0, 17, 0, 5, 1], "state": "MEASURING", "activity": 0.0}
+{"recvtime": "18, 02, 15, 13, 21, 12", "temperature": 256.0, "accelData": {"y": 0.132662, "x": 0.0900379, "z": 9.4784, "xynorm": 0.160331, "norm": 9.47975}, "time": [2000, 1, 1, 0, 18, 0, 5, 1], "state": "MEASURING", "activity": 0.0}
+{"recvtime": "18, 02, 15, 13, 22, 16", "temperature": 288.0, "accelData": {"y": 0.132662, "x": 0.0426243, "z": 9.45254, "xynorm": 0.139341, "norm": 9.45356}, "time": [2000, 1, 1, 0, 19, 0, 5, 1], "state": "MEASURING", "activity": 0.0}
+{"recvtime": "18, 02, 15, 13, 23, 20", "temperature": 329.6, "accelData": {"y": 0.121647, "x": 0.0756701, "z": 9.43817, "xynorm": 0.143262, "norm": 9.43925}, "time": [2000, 1, 1, 0, 20, 0, 5, 1], "state": "MEASURING", "activity": 0.0}
+{"recvtime": "18, 02, 15, 13, 31, 51", "temperature": 387.2, "accelData": {"y": 0.0785437, "x": 0.0962639, "z": 9.46786, "xynorm": 0.124241, "norm": 9.46868}, "time": [2000, 1, 1, 0, 28, 0, 5, 1], "state": "MEASURING", "activity": 1.0}
+{"state": "NEW_SESSION", "recvtime": "18, 02, 15, 13, 32, 01", "time": [2000, 1, 1, 0, 0, 5, 5, 1]}
+{"recvtime": "18, 02, 15, 13, 33, 00", "temperature": 387.2, "accelData": {"y": 0.1159, "x": 0.0718387, "z": 9.42141, "xynorm": 0.136358, "norm": 9.42239}, "time": [2000, 1, 1, 0, 1, 5, 5, 1], "state": "MEASURING", "activity": 1}
+{"recvtime": "18, 02, 15, 13, 34, 04", "temperature": 368.0, "accelData": {"y": 0.0991375, "x": 0.12021, "z": 9.4238, "xynorm": 0.155816, "norm": 9.42509}, "time": [2000, 1, 1, 0, 2, 0, 5, 1], "state": "MEASURING", "activity": 0.2}
+{"state": "NEW_SESSION", "recvtime": "18, 02, 15, 13, 34, 39", "time": [2000, 1, 1, 0, 0, 2, 5, 1]}
