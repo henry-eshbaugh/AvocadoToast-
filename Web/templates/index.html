@@ -60,7 +60,7 @@
               <a class="nav-link js-scroll-trigger" href="#features">Features</a>
             </li>
             <li class="nav-item">
-              <a class="nav-link js-scroll-trigger" href="#contact">Contact</a>
+              <a class="nav-link js-scroll-trigger" href="#contact">... and Beyond!</a>
             </li>
           </ul>
         </div>
@@ -129,15 +129,10 @@
               <div id="chartContainer3" style="height: 370px; max-width: 920px; margin: 0px auto;" ></div>
             </div>
             <!-- end of dashboard code -->
-
-            <h2 class="section-heading">
-                <font color = "white"> Discover what all the buzz is about ! </font color>
+<h2 class="section-heading">
+                <font color = "white"> The sleep-tracking device of tomorrow! </font color>
             </h2>
-            <p><font color = "white"> Our app is available on any mobile device! Download now to get started! </font color></p>
-            <div class="badges">
-              <a class="badge-link" href=#><img src="{{url_for('static', filename = 'img/google-play-badge.svg') }}" alt=""></a>
-              <a class="badge-link" href="#"><img src="{{url_for('static', filename = 'img/app-store-badge.svg') }}" alt=""></a>
-            </div>
+            <p><font color = "white">  </font color></p>
           </div>
         </div>
       </div>
@@ -156,11 +151,9 @@
               <div class="device-mockup iphone6_plus portrait white">
                 <div class="device">
                   <div class="screen">
-                    <!-- Demo image for screen mockup, you can put an image here, some HTML, an animation, video, or anything else! -->
                     <img src="{{url_for('static', filename = 'img/demo-screen-1.jpg') }}" class="img-fluid" alt="" style = "margin-top:100px">
                   </div>
                   <div class="button">
-                    <!-- You can hook the "home button" to some JavaScript events or just remove it -->
                   </div>
                 </div>
               </div>
@@ -172,15 +165,15 @@
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-screen-smartphone text-primary"></i>
-                    <h3>Easy access</h3>
-                    <p class="text-muted">Use the web platform on any internet connected device</p>
+                    <h3>Easy access and setup!</h3>
+                    <p class="text-muted">Simply plug in and attach to your mattress or pillow. Use this web platform on any internet connected device!</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-graph text-primary"></i>
-                    <h3>Graphical display</h3>
-                    <p class="text-muted">See each nights data, displayed conveniently against REM cycle information.</p>
+                    <h3>Graphical display!</h3>
+                    <p class="text-muted">See each night's data and gain insights into your sleep health!</p>
                   </div>
                 </div>
               </div>
@@ -189,14 +182,14 @@
                   <div class="feature-item">
                     <i class="icon-bell text-primary"></i>
                     <h3>Wake up fresh!</h3>
-                    <p class="text-muted">Set alarms to get you out of bed during light sleep periods.</p>
+                    <p class="text-muted">Set alarms to get you out of bed during lighter sleep periods, a trivial application of our API.</p>
                   </div>
                 </div>
                 <div class="col-lg-6">
                   <div class="feature-item">
                     <i class="icon-calendar text-primary"></i>
                     <h3>Calendar view</h3>
-                    <p class="text-muted">Look at an overview of your week or month's sleep to track your sleep quality.</p>
+                    <p class="text-muted">Look at an overview of your week or month's sleep to track your sleep quality!</p>
                   </div>
                 </div>
               </div>
@@ -209,7 +202,7 @@
     <section class="cta" id="contact">
       <div class="cta-content">
         <div class="container">
-          <h2>Meet the team. <br> <!--<br>Start building.</h2>-->
+          <h2>Meet the team! <br> <!--<br>Start building.</h2>-->
           <a href="#contact" class="btn btn-outline btn-xl js-scroll-trigger">Contact us</a>
         </div>
       </div>
@@ -218,28 +211,12 @@
 <!-- contact us -->
     <section class="contact bg-primary">
       <div class="container">
-        <h2>Follow us!</h2>
-          <!--<i class="fa fa-heart"></i>-->
-
-        <ul class="list-inline list-social">
-          <li class="list-inline-item social-twitter">
-            <a href=#>
-              <i class="fa fa-twitter"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-facebook">
-            <a href=#>
-              <i class="fa fa-facebook"></i>
-            </a>
-          </li>
-          <li class="list-inline-item social-google-plus">
-            <a href=#>
-              <i class="fa fa-google-plus"></i>
-            </a>
-          </li>
-
-
-        </ul>
+        <h2><font color='white'>Extensibility & Hackability</font></h2>
+        <h1  style="margin-bottom: 100px">
+            <font color='white'>
+		    Our product is developed around the notion of extensibility - we should be able to leverage the full range of applications of sensors we might choose to connect over our backend code. This is implemented with a great deal of flexibility; client-side scripts can utilize a RESTful HTTP API allowing full access to sensor readings. Data is cached on the server side by an MQTT daemon, and interfaces (including our web site) are served with Flask, meaning the same API bringing you this text can bring you drop-into-a-script sensor data. Whatsmore, if you want to extend this site, add a route to main.py and implement your application with just a few lines of Python!
+            </font>
+        </h1>
       </div>
     </section>
 
