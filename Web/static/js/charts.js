@@ -17,6 +17,7 @@ function addData(data){
 // Chart options ----------------------------------------------------------------------------
 	var chart = new CanvasJS.Chart("chartContainer", {
 		backgroundColor: "transparent",
+		zoomEnabled:true,
 		// title :{
 		// 	text: "Sleep data",
 		// 	padding : 5,
@@ -78,7 +79,7 @@ function addData(data){
 // Data point parsing ---------------------------------------------------
 	for (var i = 0; i < data.length; i++) {
 
-		//Parse Python flask server timestamp
+		//Parse Python flask server timestamp to JS date array
 		 var servtime = (data[i].recvtime );
 		 var res = servtime.split(",");
 
@@ -89,7 +90,7 @@ function addData(data){
 
 		// JSON record separating -------------------------------------------------
 		rec.activ.push({
-			x: new Date(timestamp[0], timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]),
+			x: new Date((2000+timestamp[0]), timestamp[1], timestamp[2], timestamp[3], timestamp[4], timestamp[5]),
 			y: data[i].activity
 		})
 		if(data[i].activity === undefined){
@@ -102,9 +103,7 @@ function addData(data){
 			chart.options.data.push({
 				type: "line",
 				showInLegend : true,
-				legendText: ""+rec.activ[i].x,
-				// legendText: 'Record '+[i],
-				valueFormatString: "YY MM DD HH:mm:ss" ,
+				legendText: ""+CanvasJS.formatDate(rec.activ[i].x),
 				dataPoints: rec.activ.slice((sliceIndex[i]+1),sliceIndex[i+1])
 			});
 			//chart 2 data pushing
@@ -125,8 +124,7 @@ function addData(data){
 // Render charts --------------------------------------------------------
 		chart.render();
 		console.log(chart2.options.data);
-		chart2.render(); //not loading despite dataPoints being seemingly correctly set
-
+		chart2.render();
 
 }
 // Update JSON file ----------------------------------------------------------
