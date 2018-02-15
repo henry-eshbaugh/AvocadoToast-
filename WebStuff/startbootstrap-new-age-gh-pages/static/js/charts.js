@@ -1,9 +1,14 @@
 
 window.onload = function () {
-
 	dashboardChart()
 	sleepBreakdown()
 	trendsChart()
+	setInterval(
+		function(){
+		dashboardChart()
+		sleepBreakdown()
+		trendsChart()},
+		10000);
 
 }
 
@@ -28,18 +33,32 @@ function dashboardChart() {
 		},
 		data: [{
 			type: "column",
-			dataPoints: record.classifData()
+
+			dataPoints: dps
 		},
 		{
 			type: "line",
 
-			dataPoints: record.recordData
+			dataPoints: dps
 		}]
 	});
-//	UpdateJSON();
-//	console.log(record.recordData);
-	chart.render();
+	function addData(data) {
+		for (var i = 0; i < data.length; i++) {
+			dps.push({
+				x: new Date(data[i].time[0], data[i].time[1], data[i].time[2], data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
+				y: data[i].accelData.norm
+			});
+		}
+		console.log(dps);
+		chart.render();
 
+	}
+
+	$.getJSON('/db', addData);
+// 	if(UpdateJSON().done){
+	// console.log(record.recordData);
+	// chart.render();
+// }
 }
 function sleepBreakdown() {
 		var chart = new CanvasJS.Chart("chartContainer2", {
