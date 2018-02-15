@@ -1,10 +1,6 @@
 
 window.onload = function () {
 	dashboardChart()
-
-	trendsChart()
-
-
 }
 
 function dashboardChart() {
@@ -31,50 +27,58 @@ function addData(data){
 
 		}],
 		axisX : {
+			// valueFormatString: "HHH",
 			title : "Time",
 			titleFontSize : 15
 		},
+		legend: {
+				horizontalAlign: "left", // "center" , "right"
+     		verticalAlign: "center",  // "top" , "bottom"
+       	fontSize: 15,
+        cursor: "pointer",
+        itemclick: function (e) {
+            //console.log("legend click: " + e.dataPointIndex);
+            //console.log(e);
+            if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
+                e.dataSeries.visible = false;
+            } else {
+                e.dataSeries.visible = true;
+            }
+
+            e.chart.render();
+        }
+    },
 		data: []
 
 	});
 //chart 2 options --------------------------------------------------------
-var chart2 = new CanvasJS.Chart("chartContainer3", {
-	backgroundColor: "transparent",
+	var chart2 = new CanvasJS.Chart("chartContainer3", {
+		backgroundColor: "transparent",
 	// title :{
 	// text: "Trends"
 	// },
-	axisY: {
-	title : "Hours of sleep",
-	includeZero: false,
-	titleFontSize : 15
-	},
-	axisX: {
-	title : "Date Month/Day/Year",
-	titleFontSize : 15
-	},
-	data: [{
-	type: "stackedColumn",
-	legendText: "REM sleep",
-			showInLegend: "true",
-	dataPoints: [
-		{ x: new Date(2016, 1, 0), y: 40000 },
-		{ x: new Date(2016, 1, 1), y: 42000 },
-		{ x: new Date(2016, 1, 2), y: 45000 },
-		{ x: new Date(2016, 1, 3), y: 45000 },
-		{ x: new Date(2016, 1, 4), y: 47000 },
-		{ x: new Date(2016, 1, 5), y: 43000 },
-		{ x: new Date(2016, 1, 6), y: 42000 },
-		{ x: new Date(2016, 1, 7), y: 43000 },
-	]
+		axisY: {
+		title : "Hours of sleep",
+		includeZero: false,
+		valueFormatString: "mm",
+		titleFontSize : 15
+		},
+		axisX: {
+		title : "Date Month/Day/Year",
+		valueFormatString: "MM-DD",
+		titleFontSize : 15
+		},
+		data: {
+		type: "column",
+		dataPoints: []
 	}
-]
-});
+	});
 
 // Data point parsing ---------------------------------------------------
 	for (var i = 0; i < data.length; i++) {
 
-		rec.activ.push({
-			x: new Date(data[i].time[0], data[i].time[1], data[i].time[2], data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
+		rec.activ.push({ //date slightly adjusted to work with unrealistic test data
+			x: new Date(data[i].time[0], data[i].time[1], '1', data[i].time[3], data[i].time[4], data[i].time[5], data[i].time[6], data[i].time[7]),
 			y: data[i].activity
 // JSON record separating -------------------------------------------------
 		})
@@ -84,27 +88,37 @@ var chart2 = new CanvasJS.Chart("chartContainer3", {
 	}
 // Data point updating --------------------------------------------------------------------
 		for(var i =0; i< sliceIndex.length; i++){
-
+			//chart 1 data pushing
 			chart.options.data.push({
 				type: "line",
+				showInLegend : true,
+				legendText: 'Record '+(i+1),
 				dataPoints: rec.activ.slice((sliceIndex[i]+1),sliceIndex[i+1])
-			})
+			});
+			//chart 2 data pushing
+			if((rec.activ[sliceIndex[i+1]]) === undefined){
+				var recTime = (Date.parse(rec.activ[rec.activ.length-1].x) - Date.parse(rec.activ[sliceIndex[i]].x))
+				} else {
+				var recTime = (Date.parse(rec.activ[sliceIndex[i+1]-1].x) - Date.parse(rec.activ[sliceIndex[i]].x))
+				}
 
+				// console.log(recTime);
+				// console.log(new Date(Date.parse(rec.activ[sliceIndex[i]].x)+(i*86400000)));
+			chart2.options.data.dataPoints.push({
+				x: recTime,
+				y: new Date(Date.parse(rec.activ[sliceIndex[i]].x)+(i*86400000))
+			});
+			// console.log(chart2.options.data.dataPoints);
 		}
 // Render charts --------------------------------------------------------
 		chart.render();
-	  chart2.render();
+		console.log(chart2.options.data);
+		chart2.render(); //not loading despite dataPoints being seemingly correctly set
+
+		// document.getElementById("chartContainer3").innerHTML = JSON.stringify(chart2.options.data.dataPoints);
 
 }
 // Update JSON file ----------------------------------------------------------
 $.getJSON('/db', addData);
-
-}
-
-function trendsChart() {
-
-
-
-
 
 }
