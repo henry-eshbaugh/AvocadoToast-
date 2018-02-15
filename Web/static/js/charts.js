@@ -3,6 +3,7 @@ window.onload = function () {
 	dashboardChart()
 }
 
+
 function dashboardChart() {
 
 var rec = {
@@ -101,7 +102,9 @@ function addData(data){
 			chart.options.data.push({
 				type: "line",
 				showInLegend : true,
-				legendText: 'Record '+(i+1),
+				legendText: ""+rec.activ[i].x,
+				// legendText: 'Record '+[i],
+				valueFormatString: "YY MM DD HH:mm:ss" ,
 				dataPoints: rec.activ.slice((sliceIndex[i]+1),sliceIndex[i+1])
 			});
 			//chart 2 data pushing
@@ -124,7 +127,6 @@ function addData(data){
 		console.log(chart2.options.data);
 		chart2.render(); //not loading despite dataPoints being seemingly correctly set
 
-		// document.getElementById("chartContainer3").innerHTML = JSON.stringify(chart2.options.data.dataPoints);
 
 }
 // Update JSON file ----------------------------------------------------------
