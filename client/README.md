@@ -1,7 +1,7 @@
 ### Firmware for AvocadoToast
 
 `main.py` contains code to initialize
-the network & SPI interfaces, and instantiate
+the network & I2C interfaces, and instantiate
 an object of class `lis3dh`, which abstracts
 I2C transactions into methods for sensor reading.
 Raw data is read and processed, and formatted
@@ -10,6 +10,18 @@ This includes raw data as well, for any application
 desired to be implemented in Flask; however, sufficient
 data is transmitted in the top-level of the dictionary
 to perform sleep monitoring services.
+
+When a measurement is taken, the program will take
+a series of readings in a short time period
+(20 readings by default). The average of these readings
+is then taken, which reduces the effect of noise by a
+factor of more than 10.
+
+The algorithm carried out on the accelerometer data
+in `main.py` is a common model used in actigraph
+scoring, where a window of 5 epochs each with 1 minute of
+measurements have a weighted sum applied. This gives
+an appropriate metric by which one can measure sleep activity.
 
 `lis3dh.py` implements class `lis3dh`, which is a
 collection of methods for conducting I2C
