@@ -39,8 +39,6 @@ function addData(data){
        	fontSize: 15,
         cursor: "pointer",
         itemclick: function (e) {
-            //console.log("legend click: " + e.dataPointIndex);
-            //console.log(e);
             if (typeof (e.dataSeries.visible) === "undefined" || e.dataSeries.visible) {
                 e.dataSeries.visible = false;
             } else {
@@ -54,7 +52,7 @@ function addData(data){
 
 	});
 //chart 2 options --------------------------------------------------------
-	var chart2 = new CanvasJS.Chart("chartContainer3", {
+	var chart2 = new CanvasJS.Chart("chartContainer3",{
 		backgroundColor: "transparent",
 	// title :{
 	// text: "Trends"
@@ -70,11 +68,12 @@ function addData(data){
 		valueFormatString: "MM-DD",
 		titleFontSize : 15
 		},
-		data: {
+		data: [{
 		type: "column",
-		dataPoints: []
-	}
-	});
+		dataPoints : []
+
+	}]
+});
 
 // Data point parsing ---------------------------------------------------
 	for (var i = 0; i < data.length; i++) {
@@ -114,16 +113,17 @@ function addData(data){
 				}
 
 				console.log(recTime);
-				// console.log(new Date(Date.parse(rec.activ[sliceIndex[i]].x)+(i*86400000)));
-			chart2.options.data.dataPoints.push({
+			chart2.options.data[0].dataPoints.push({
 				x: recTime,
-				y: new Date(Date.parse(rec.activ[sliceIndex[i]].x)+(i*86400000))
+				y: new Date(Date.parse(rec.activ[sliceIndex[i]].x))
 			});
 			// console.log(chart2.options.data.dataPoints);
 		}
 // Render charts --------------------------------------------------------
 		chart.render();
-		console.log(chart2.options.data);
+		// console.log(chart2.options.data);
+		console.log(chart2.options);
+
 		chart2.render();
 
 }
