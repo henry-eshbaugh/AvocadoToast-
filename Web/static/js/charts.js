@@ -113,7 +113,7 @@ function addData(data){
 				var recTime = (Date.parse(rec.activ[sliceIndex[i+1]-1].x) - Date.parse(rec.activ[sliceIndex[i]].x))
 				}
 
-				// console.log(recTime);
+				console.log(recTime);
 				// console.log(new Date(Date.parse(rec.activ[sliceIndex[i]].x)+(i*86400000)));
 			chart2.options.data.dataPoints.push({
 				x: recTime,
